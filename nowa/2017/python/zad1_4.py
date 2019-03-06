@@ -23,5 +23,5 @@ for y in range(len(data[0])):
             curr_len = 0
 
 # wyswietlenie odpowiedzi
-answer = f'6.4) Najdluzy ciag tych samych pikseli w kolumnie to {longest}'
+answer = f'6.4) Najdluzy ciag tych samych pikseli w kolumnie: {longest}'
 print(answer)

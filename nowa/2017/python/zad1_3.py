@@ -26,5 +26,5 @@ for x in range(len(data)):
 
 
 # wyswietlenie odpowiedzi
-answer = f'6.3) Jest {contrasting_pixels} kontrastujacych pikseli'
+answer = f'6.3) Ilosc kontrastujacych pikseli: {contrasting_pixels}'
 print(answer)

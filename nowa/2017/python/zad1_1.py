@@ -16,5 +16,5 @@ for ln in data:
             darkest = number
 
 # wyswietlenie odpowiedzi
-answer = f'6.1) Najciemniejszy: {darkest}, najjasniejszy: {brightest}'
+answer = f'6.1) Najciemniejszy: {darkest}; najjasniejszy: {brightest}'
 print(answer)
