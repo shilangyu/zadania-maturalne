@@ -1,22 +1,22 @@
 with open('../dane/dane.txt') as f:
-    dane = [x[:-1].split(' ') for x in f]
+    data = [x[:-1].split(' ') for x in f]
 
-kontrastujace_piksele = 0
-sasiedzi = [
+contrasting_pixels = 0
+neighbors = [
     (1, 0),
     (0, 1),
     (-1, 0),
     (0, -1)
 ]
-for x in range(len(dane)):
-    for y in range(len(dane[x])):
-        for px, py in sasiedzi:
-            if 0 > x + px or x + px >= len(dane) or 0 > y + py or y + py >= len(dane[x]):
+for x in range(len(data)):
+    for y in range(len(data[x])):
+        for px, py in neighbors:
+            if 0 > x + px or x + px >= len(data) or 0 > y + py or y + py >= len(data[x]):
                 pass
-            elif abs(int(dane[x][y]) - int(dane[x + px][y + py])) > 128:
-                kontrastujace_piksele += 1
+            elif abs(int(data[x][y]) - int(data[x + px][y + py])) > 128:
+                contrasting_pixels += 1
                 break
 
 
-odpowiedz = f'6.3) Jest {kontrastujace_piksele} kontrastujacych pikseli'
-print(odpowiedz)
+answer = f'6.3) Jest {contrasting_pixels} kontrastujacych pikseli'
+print(answer)

@@ -4,7 +4,7 @@ import zad1_3
 import zad1_4
 
 
-wyniki = '\n'.join([zad1_1.odpowiedz, zad1_2.odpowiedz,
-                    zad1_3.odpowiedz, zad1_4.odpowiedz])
+result = '\n'.join([zad1_1.answer, zad1_2.answer,
+                    zad1_3.answer, zad1_4.answer])
 with open('wyniki.txt', mode='w') as f:
-    f.write(wyniki)
+    f.write(result)

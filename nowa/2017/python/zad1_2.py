@@ -1,15 +1,15 @@
 with open('../dane/dane.txt') as f:
-    dane = [x[:-1].split(' ') for x in f]
+    data = [x[:-1].split(' ') for x in f]
 
 
-def jest_palindromem(linia):
-    return linia == [*reversed(linia)]
+def jest_palindromem(line):
+    return line == [*reversed(line)]
 
 
-zle_linie = 0
-for linia in dane:
-    if not jest_palindromem(linia):
-        zle_linie += 1
+not_pali = 0
+for ln in data:
+    if not jest_palindromem(ln):
+        not_pali += 1
 
-odpowiedz = f'6.2) Trzeba usunac {zle_linie} wierszy'
-print(odpowiedz)
+answer = f'6.2) Trzeba usunac {not_pali} wierszy'
+print(answer)
