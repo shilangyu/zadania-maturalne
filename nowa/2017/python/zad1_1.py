@@ -1,6 +1,7 @@
 with open('../dane/dane.txt') as f:
+    data = []
     for line in f.readlines():
-        data = line[:-1].split(' ')
+        data.append(line[:-1].split(' '))
 
 brightest = 0
 darkest = 256
