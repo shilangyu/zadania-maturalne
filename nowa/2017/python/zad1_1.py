@@ -7,8 +7,10 @@ darkest = 256
 for ln in data:
     for number in ln:
         number = int(number)
-        brightest = number if number > brightest else brightest
-        darkest = number if number < darkest else darkest
+        if number > brightest:
+            brightest = number
+        if number < darkest:
+            darkest = number
 
 answer = f'6.1) Najciemniejszy: {darkest}, najjasniejszy: {brightest}'
 print(answer)
