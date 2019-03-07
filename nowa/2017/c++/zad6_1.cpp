@@ -2,25 +2,33 @@
 #include <string>
 #include <cstdlib>
 #include <fstream>
+#include <vector>
 using namespace std;
 
-int main() {
+string zad6_1()
+{
     string line;
     int min = 255, max = 0;
+    vector<string> content;
 
-    fstream file("dane.txt");
+    fstream file("../dane/dane.txt");
 
-    if (file.is_open()) {
-        while (getline(file, line, ' ')) {
-            int temporary = atoi(line.c_str());
-
-			min = (temporary < min) ? min = temporary : min = min;
-			max = (temporary > max) ? max = temporary : max = max;
-        }
+    if (file.is_open())
+    {
+        while (getline(file, line, ' '))
+            content.push_back(line);
     }
     file.close();
 
-    cout << "6.1 Wartosc najciemniejszego piksela: " << min << ", " << "wartosc najjasniejszego piksela: " << max << endl;
+    for (int i = 0; i < content.size(); i++)
+    {
+        int temporary = atoi(content[i].c_str());
 
-    system("PAUSE");
+        if (temporary < min)
+            min = temporary;
+        if (temporary > max)
+            max = temporary;
+    }
+
+    return "6.1) Wartosc najciemniejszego piksela: " + to_string(min) + "; " + "wartosc najjasniejszego piksela: " + to_string(max);
 }
