@@ -2,7 +2,3 @@
 *.exe
 .vscode/
 wyniki.txt
-# python
-__pycache__/
-wyniki.txt
-.vscode/
