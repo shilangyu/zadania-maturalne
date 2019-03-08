@@ -1,10 +1,10 @@
-import zad1_1
-import zad1_2
-import zad1_3
-import zad1_4
+import zad6_1
+import zad6_2
+import zad6_3
+import zad6_4
 
 # zebranie odpowiedzi z podpunktow i zapisanie ich do pliku
-result = '\n'.join([zad1_1.answer, zad1_2.answer,
-                    zad1_3.answer, zad1_4.answer])
+result = '\n'.join([zad6_1.answer, zad6_2.answer,
+                    zad6_3.answer, zad6_4.answer])
 with open('wyniki.txt', mode='w') as f:
     f.write(result)
