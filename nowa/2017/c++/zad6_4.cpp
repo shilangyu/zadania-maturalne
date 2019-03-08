@@ -62,5 +62,5 @@ string zad6_4()
 		currentLength = 0;
 	}
 
-	return "6.4 Liczba elementow najdluzszej kolumny pikseli swiecacej z ta sama jasnoscia: " + to_string(maxLength);
+	return "6.4) Liczba elementow najdluzszej kolumny pikseli swiecacej z ta sama jasnoscia: " + to_string(maxLength);
 }
