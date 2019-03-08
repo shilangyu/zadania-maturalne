@@ -6,7 +6,6 @@
 #include <fstream>
 using namespace std;
 
-//funkcja odwracająca stringi z vectora zwracająca vector
 vector<string> doReverse(vector<string> input)
 {
 	vector<string> output;
@@ -21,25 +20,30 @@ string zad6_2()
 {
 	fstream file("../dane/dane.txt");
 	string line;
-	vector<string> content;
+	vector<vector<string>> content;
+	vector<string> currentLine;
 	int howManyAsyncLines = 0;
 
 	//odczytywanie z pliku przechodząc po poszczególnych elementach
 	if (file.is_open())
 	{
 		while (getline(file, line))
-			content.push_back(line);
+		{
+			stringstream ss(line);
+			while (getline(ss, line, ' '))
+				currentLine.push_back(line);
+
+			content.push_back(currentLine);
+			currentLine.clear();
+		}
 	}
 	file.close();
 
-	vector<string> reversed = doReverse(content);
-
-	//work in progress
 	for (int i = 0; i < content.size(); i++)
 	{
-		if (content[i] != reversed[i])
+		if (content[i] != doReverse(content[i]))
 			howManyAsyncLines++;
 	}
 
-	return "6.2 Najmniejsza liczba wierszy do usuniecia, zeby uzyskac symetryczny obraz: " + to_string(howManyAsyncLines);
+	return "6.2) Najmniejsza liczba wierszy do usuniecia, zeby uzyskac symetryczny obraz: " + to_string(howManyAsyncLines);
 }
