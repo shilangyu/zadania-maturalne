@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <vector>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
 string zad6_4()
@@ -14,19 +15,17 @@ string zad6_4()
 
 	if (file.is_open())
 	{
-		while (getline(file, element, ' '))
+		while (getline(file, element))
 		{
-
-			if (width < 320 and height < 200)
-				board[height][width] = element;
-
-			width++;
-
-			if (width == 320)
+			stringstream ss(element);
+			while (getline(ss, element, ' '))
 			{
-				width = 0;
-				height++;
+				board[height][width] = element;
+				width++;
 			}
+
+			height++;
+			width = 0;
 		}
 	}
 	file.close();

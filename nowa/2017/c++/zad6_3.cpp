@@ -85,6 +85,7 @@ string zad6_3()
 			//zwiększenie o jeden liczby kontrastującyh pikseli jeżeli piksel, który sprawdzamy kontrastuje z conajmniej jednym pikselem obok
 			if (checker > 0)
 				howManyContrastingPixels++;
+
 			checker = 0;
 		}
 	}

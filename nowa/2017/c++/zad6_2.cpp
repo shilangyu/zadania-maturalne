@@ -20,25 +20,26 @@ vector<string> doReverse(vector<string> input)
 string zad6_2()
 {
 	fstream file("../dane/dane.txt");
-	string element;
-	vector<string> line;
+	string line;
+	vector<string> content;
 	int howManyAsyncLines = 0;
 
 	//odczytywanie z pliku przechodząc po poszczególnych elementach
 	if (file.is_open())
 	{
-		while (getline(file, element))
-		{
-			stringstream ss(element);
-			while (getline(ss, element, ' '))
-				line.push_back(element);
-
-			if (line != doReverse(line))
-				howManyAsyncLines++;
-			line.clear();
-		}
+		while (getline(file, line))
+			content.push_back(line);
 	}
 	file.close();
+
+	vector<string> reversed = doReverse(content);
+
+	//work in progress
+	for (int i = 0; i < content.size(); i++)
+	{
+		if (content[i] != reversed[i])
+			howManyAsyncLines++;
+	}
 
 	return "6.2 Najmniejsza liczba wierszy do usuniecia, zeby uzyskac symetryczny obraz: " + to_string(howManyAsyncLines);
 }
