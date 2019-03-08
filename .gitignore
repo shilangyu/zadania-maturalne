@@ -1,0 +1,4 @@
+# c++
+*.exe
+.vscode/
+wyniki.txt
