@@ -18,6 +18,6 @@ for a in data:
 
 
 # wyswietlenie odpowiedzi
-answer = f'4.2. Slowo z najwieksza liczba liter brzmi "{max_word}" ' + \
-    f'i ma {max_count} różnych liter'
+answer = f'4.2. Slowo z najwieksza liczba liter: {max_word}; ' + \
+    f'ma {max_count} różnych liter'
 print(answer)

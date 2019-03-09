@@ -14,5 +14,5 @@ for i, e in enumerate(data):
 
 
 # wyswietlenie odpowiedzi
-answer = f'6.1. Przesłanie brzmi "{msg}"'
+answer = f'4.1. Przeslanie brzmi: {msg}'
 print(answer)
