@@ -51,7 +51,7 @@ string zad6_1()
         readyToPush = "";
     }
 
-    //wypełnianie stringa, który ma całą zawartość vectora content
+    //wypełnianie stringa, który ma całą zawartość vectora encoded
     string encodedString = "";
 
     for (int i = 0; i < encoded.size(); i++)
