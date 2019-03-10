@@ -49,10 +49,46 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
+int findCode(char raw, char encoded)
+{
+    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int code, rawNumber;
+
+    //sprawdzanie pozycji znaku w alfabecie
+    for (int i = 0; i < alphabet.size(); i++)
+    {
+        if (alphabet[i] == raw)
+        {
+            rawNumber = i;
+            break;
+        }
+    }
+
+    //sprawdzanie odległości pierwszego znaku od drugiego
+    for (int i = rawNumber + 1; i < alphabet.size(); i++)
+    {
+        if (alphabet[i] == encoded)
+        {
+            code = i - rawNumber;
+            break;
+        }
+    }
+
+    return code;
+}
+
+bool isCorrect(string raw, string encoded, int code)
+{
+    bool correct = false;
+
+    return correct;
+}
+
 string zad6_3()
 {
     string line;
     vector<string> content;
+    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     fstream file("../dane/dane_6_3.txt");
 
@@ -65,6 +101,12 @@ string zad6_3()
     //wywoływanie funkcji splitVector
     vector<string> raw = splitVector(content)[0];
     vector<string> encoded = splitVector(content)[1];
+
+    //sprawdzanie czy szyfrowanie jest błędne
+    for (int i = 0; i < content.size(); i++)
+    {
+        int code = findCode(raw[i][0], encoded[i][0]);
+    }
 
     return "";
 }
