@@ -49,6 +49,35 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
+//funkcja znajdowanie przesunięcia
+int findCode(char raw, char encoded)
+{
+    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int code, rawNumber;
+
+    //sprawdzanie pozycji znaku w alfabecie
+    for (int i = 0; i < alphabet.size(); i++)
+    {
+        if (alphabet[i] == raw)
+        {
+            rawNumber = i;
+            break;
+        }
+    }
+
+    //sprawdzanie odległości pierwszego znaku od drugiego
+    for (int i = rawNumber + 1; i < alphabet.size(); i++)
+    {
+        if (alphabet[i] == encoded)
+        {
+            code = i - rawNumber;
+            break;
+        }
+    }
+
+    return code;
+}
+
 string zad6_3()
 {
     string line;
@@ -66,6 +95,42 @@ string zad6_3()
     //wywoływanie funkcji splitVector
     vector<string> raw = splitVector(content)[0];
     vector<string> encoded = splitVector(content)[1];
+    vector<string> answer;
 
-    return "";
+    string manuallyEncoded = "";
+
+    for (int i = 0; i < raw.size(); i++)
+    {
+        int code = findCode(raw[i][0], encoded[i][0]);
+
+        for (int j = 0; j < raw[i].size(); j++)
+        {
+            int currentAlphabetPosition;
+
+            for (int k = 0; k < alphabet.size(); k++)
+            {
+                if (alphabet[k] == raw[i][j])
+                    currentAlphabetPosition = k;
+            }
+
+            manuallyEncoded += alphabet[currentAlphabetPosition + code];
+        }
+
+        if (manuallyEncoded != encoded[i])
+            answer.push_back(raw[i]);
+
+        manuallyEncoded = "";
+    }
+
+    string answerString = "";
+
+    for (int i = 0; i < answer.size(); i++)
+    {
+        if (i != answer.size() - 1)
+            answerString += answer[i] + ", ";
+        else
+            answerString += answer[i];
+    }
+
+    return "6.3) Wyrazy zaszyfrowane blednie: " + answerString;
 }
