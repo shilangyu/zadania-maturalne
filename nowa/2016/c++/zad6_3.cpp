@@ -66,14 +66,5 @@ string zad6_3()
     vector<string> raw = splitVector(content)[0];
     vector<string> encoded = splitVector(content)[1];
 
-    ofstream raww("raw.txt");
-    ofstream en("encoded.txt");
-
-    for (int i = 0; i < content.size(); i++)
-    {
-        raww << raw[i] << endl;
-        en << encoded[i] << endl;
-    }
-
     return "";
 }
