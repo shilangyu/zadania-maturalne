@@ -12,6 +12,7 @@ string zad4_1()
 
     fstream file("../dane/liczby.txt");
 
+    //wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
