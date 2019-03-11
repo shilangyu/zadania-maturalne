@@ -49,7 +49,7 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
-//funkcja znajdowanie przesunięcia
+//funkcja znajdująca przesunięcie
 int findCode(char raw, char encoded)
 {
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -99,6 +99,7 @@ string zad6_3()
 
     string manuallyEncoded = "";
 
+    //sprawdzanie, które wyrazy zostały błędnie zaszyfrowane
     for (int i = 0; i < raw.size(); i++)
     {
         int code = findCode(raw[i][0], encoded[i][0]);
@@ -110,9 +111,11 @@ string zad6_3()
             for (int k = 0; k < alphabet.size(); k++)
             {
                 if (alphabet[k] == raw[i][j])
+                {
                     currentAlphabetPosition = k;
+                    break;
+                }
             }
-
             manuallyEncoded += alphabet[currentAlphabetPosition + code];
         }
 
@@ -132,5 +135,5 @@ string zad6_3()
             answerString += answer[i];
     }
 
-    return "6.3) Wyrazy zaszyfrowane blednie: " + answerString;
+    return "6.3. Wyrazy zaszyfrowane blednie: " + answerString;
 }

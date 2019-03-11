@@ -18,6 +18,7 @@ string zad6_2()
         while (getline(file, line))
             content.push_back(line);
     }
+    file.close();
 
     //odszyfrowywanie wyrazów
     vector<string> decoded;
@@ -84,5 +85,5 @@ string zad6_2()
             decodedString += decoded[i];
     }
 
-    return "6.2) Odszyfrowane wyrazy: " + decodedString;
+    return "6.2. Odszyfrowane wyrazy: " + decodedString;
 }
