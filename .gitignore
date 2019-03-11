@@ -4,5 +4,5 @@
 wyniki.txt
 # python
 __pycache__/
-wyniki.txt
+**/python/wyniki.txt
 .vscode/

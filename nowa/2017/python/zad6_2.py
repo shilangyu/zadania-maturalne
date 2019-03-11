@@ -17,5 +17,5 @@ for ln in data:
         not_pali += 1
 
 # wyswietlenie odpowiedzi
-answer = f'6.2) Ilosc wierszy ktore trzeba usunac: {not_pali}'
+answer = f'6.2. Ilosc wierszy ktore trzeba usunac: {not_pali}'
 print(answer)
