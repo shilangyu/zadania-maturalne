@@ -62,5 +62,5 @@ string zad6_1()
             encodedString += encoded[i];
     }
 
-    return "6.1) Zaszyfrowane wyrazy: " + encodedString;
+    return "6.1. Zaszyfrowane wyrazy: " + encodedString;
 }
