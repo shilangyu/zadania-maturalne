@@ -90,5 +90,5 @@ string zad6_3()
 		}
 	}
 
-	return "6.3) Liczba kontrastujacych pikseli: " + to_string(howManyContrastingPixels);
+	return "6.3. Liczba kontrastujacych pikseli: " + to_string(howManyContrastingPixels);
 }

@@ -30,5 +30,5 @@ string zad6_1()
             max = temporary;
     }
 
-    return "6.1) Wartosc najciemniejszego piksela: " + to_string(min) + "; " + "wartosc najjasniejszego piksela: " + to_string(max);
+    return "6.1. Wartosc najciemniejszego piksela: " + to_string(min) + "; " + "wartosc najjasniejszego piksela: " + to_string(max);
 }
