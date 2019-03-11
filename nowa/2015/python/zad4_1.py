@@ -18,5 +18,5 @@ for line in data:
         more_zeros += 1
 
 # zapisanie odpowiedzi
-answer = f'4.1) Liczby z wieksza iloscia zer: {more_zeros}'
+answer = f'4.1. Liczby z wieksza iloscia zer: {more_zeros}'
 print(answer)

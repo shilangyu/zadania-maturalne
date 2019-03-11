@@ -27,5 +27,5 @@ for word, hash in zip(words, hashed):
 
 # zapisanie odpowiedzi
 newline = '\n'
-answer = f'6.3) Zle zaszyfrowane slowa:\n{newline.join(results)}'
+answer = f'6.3. Zle zaszyfrowane slowa:\n{newline.join(results)}'
 print(answer)

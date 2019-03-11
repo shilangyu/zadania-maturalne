@@ -23,5 +23,5 @@ for line, key in zip(data, keys):
 
 # zapisanie odpowiedzi
 newline = '\n'
-answer = f'6.2) Odszyfrowane slowa:\n{newline.join(results)}'
+answer = f'6.2. Odszyfrowane slowa:\n{newline.join(results)}'
 print(answer)
