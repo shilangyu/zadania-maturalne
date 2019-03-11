@@ -19,5 +19,5 @@ for a in data:
 
 # wyswietlenie odpowiedzi
 answer = f'4.2. Slowo z najwieksza liczba liter: {max_word}; ' + \
-    f'ma {max_count} różnych liter'
+    f'ilosc roznych liter: {max_count}'
 print(answer)
