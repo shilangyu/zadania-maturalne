@@ -14,5 +14,5 @@ for line in data:
         div8 += 1
 
 # zapisanie odpowiedzi
-answer = f'4.2) Liczby podzielne przez 2: {div2}; Liczby podzielne przez 8: {div8}'
+answer = f'4.2. Liczby podzielne przez 2: {div2}; Liczby podzielne przez 8: {div8}'
 print(answer)

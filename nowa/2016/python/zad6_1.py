@@ -20,5 +20,5 @@ for line in data:
 
 # zapisanie odpowiedzi
 newline = '\n'
-answer = f'6.1) Zaszyfrowane slowa:\n{newline.join(results)}'
+answer = f'6.1. Zaszyfrowane slowa:\n{newline.join(results)}'
 print(answer)

@@ -35,5 +35,5 @@ for i, line in enumerate(data):
                 break
 
 # zapisanie odpowiedzi
-answer = f'4.3) Najwieksza liczba znajduje sie w wierszu: {biggest_number_row}; Najmniejsza liczba znajduje sie w wierszu: {smallest_number_row}'
+answer = f'4.3. Najwieksza liczba znajduje sie w wierszu: {biggest_number_row}; Najmniejsza liczba znajduje sie w wierszu: {smallest_number_row}'
 print(answer)
