@@ -39,23 +39,45 @@ string zad4_3()
         currentMaxInRow = 0;
     }
 
-    //wyodrębnianie tych liczb, które mają maksymalnej długości ciąg składający się z jedynek z przodu liczby
+    //znajdowanie liczby odpowiadającej za rozmiar najdłuższej liczby/liczb
+    int maxLength = 0;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (content[i].size() > maxLength)
+            maxLength = content[i].size();
+    }
+
+    //wyodrębnianie najdłuższych liczb
     vector<string> firstSort;
 
     for (int i = 0; i < content.size(); i++)
     {
-        for (int j = 0; j < content[i].size(); j++)
+        if (content[i].size() == maxLength)
+            firstSort.push_back(content[i]);
+    }
+
+    //wyodrębnianie tych liczb, które mają maksymalnej długości ciąg składający się z jedynek z przodu liczby
+    vector<string> secondSort;
+
+    for (int i = 0; i < firstSort.size(); i++)
+    {
+        for (int j = 0; j < firstSort[i].size(); j++)
         {
-            if (content[i][j] == '1')
+            if (firstSort[i][j] == '1')
                 currentMaxInRow++;
             else
                 break;
         }
 
         if (currentMaxInRow == maxInRow)
-            firstSort.push_back(content[i]);
+            secondSort.push_back(firstSort[i]);
 
         currentMaxInRow = 0;
+    }
+
+    for (int i = 0; i < firstSort.size(); i++)
+    {
     }
 
     return "";
