@@ -7,8 +7,11 @@ with open('../dane/dane.txt') as f:
 # wyszukanie minimum i maximum w tablicy
 brightest = 0
 darkest = 256
+# przejscie po kazdym wierszu
 for ln in data:
+    # przejscie po kazdej liczbie w wierszu
     for number in ln:
+        # podmiana min i max
         number = int(number)
         if number > brightest:
             brightest = number

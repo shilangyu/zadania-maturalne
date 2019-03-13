@@ -13,8 +13,10 @@ curr_len = 0
 for y in range(len(data[0])):
     current = data[0][y]
     for x in range(len(data)):
+        # jezeli nastepny znak jest taki sam co aktualny badany, dodaj 1 do dlugosci
         if current == data[x][y]:
             curr_len += 1
+        # jezeli nie, sprawdz czy pobil rekord i zresetuj zmienne 
         else:
             if curr_len > longest:
                 longest = curr_len

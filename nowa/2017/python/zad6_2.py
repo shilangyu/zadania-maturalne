@@ -6,6 +6,7 @@ with open('../dane/dane.txt') as f:
 
 
 # funkcja zwraca prawda/falsz czy dany ciag jest palidromem
+# porownuje dany ciag z jego odwroceniem
 def is_palindrome(line):
     return line == [*reversed(line)]
 

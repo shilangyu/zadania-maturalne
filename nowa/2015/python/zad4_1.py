@@ -9,6 +9,7 @@ more_zeros = 0
 for line in data:
     zeros = 0
     ones = 0
+    # zliczam ilosc zer i jedynek
     for char in line:
         if char == '1':
             ones += 1
