@@ -29,7 +29,7 @@ string zad4_3()
             maxLength = content[i].size();
     }
 
-    //wyodrębnienie wszystkich najdłuższych liczb
+    //wyodrębnianie wszystkich najdłuższych liczb
     vector<string> theLongests;
 
     for (int i = 0; i < content.size(); i++)
@@ -91,5 +91,35 @@ string zad4_3()
         }
     }
 
-    return "4.3. Numer wiersza zawierajacy najwieksza liczbe: " + to_string(biggestNumber);
+    //-------------------------------------------------------------------------------
+
+    //znajdowanie minimalnej długości liczby
+    int minLength = 10000;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (content[i].size() < minLength)
+            minLength = content[i].size();
+    }
+
+    //znajdowanie liczb o najmniejszej długości
+    vector<string> theSmallest;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (content[i].size() == minLength)
+            theSmallest.push_back(content[i]);
+    }
+
+    // okazało się, że zostało 5 liczb, z których możemy wywnioskować, że liczb 100 jest najmniejsza
+    //znajdowanie numeru wiersza zawierającego najmniejszą liczbę
+    int smallestNumber;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (content[i] == "100")
+            smallestNumber = i + 1;
+    }
+
+    return "4.3. Numer wiersza zawierajacy najwieksza liczbe: " + to_string(biggestNumber) + "; Numer wiersza zawierajacy najmniejsza liczbe: " + to_string(smallestNumber);
 }
