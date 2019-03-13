@@ -8,22 +8,26 @@ with open('../dane/dane_6_3.txt') as f:
         hashed.append(hash)
 
 
-# przesuniecie liter o dany klucz
+# zaszyfrowanie dana litere o dany klucz tym samym sposobem co w zad6_1.py
+def crypt(letter, key):
+    curr = ord(letter) - ord('A')
+    moved = abs((curr + key) % (ord('Z') - ord('A') + 1))
+    return chr(moved + ord('A'))
+
+
+# znalezienie zle zaszyfrowanych slow
 results = []
 for word, hash in zip(words, hashed):
-    bad = True
-    for key in range(1, 36):
-        currLine = ''
-        for char in word:
-            curr = ord(char) - ord('A')
-            moved = abs((curr + key) % (ord('Z') - ord('A') + 1))
-            newchar = chr(moved + ord('A'))
-            currLine += newchar
-        if currLine == hash:
-            bad = False
+    # wydobycie klucza na podstawie pierszwej litery
+    for testKey in range(ord('Z') - ord('A') + 1):
+        if crypt(word[0], testKey) == hash[0]:
+            key = testKey
             break
-    if bad:
-        results.append(word)
+    # sprawdzenie czy reszta liter tez spelnia dany klucz
+    for w, h in zip(word, hash):
+        if crypt(w, key) != h:
+            results.append(word)
+            break
 
 # zapisanie odpowiedzi
 newline = '\n'
