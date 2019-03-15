@@ -52,12 +52,12 @@ string zad6_1()
     }
 
     //wypełnianie stringa, który ma całą zawartość vectora encoded
-    string encodedString = "";
+    string encodedString = "\n";
 
     for (int i = 0; i < encoded.size(); i++)
     {
         if (i != encoded.size() - 1)
-            encodedString += encoded[i] + ", ";
+            encodedString += encoded[i] + "\n";
         else
             encodedString += encoded[i];
     }

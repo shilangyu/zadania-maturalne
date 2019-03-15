@@ -125,12 +125,12 @@ string zad6_3()
         manuallyEncoded = "";
     }
 
-    string answerString = "";
+    string answerString = "\n";
 
     for (int i = 0; i < answer.size(); i++)
     {
         if (i != answer.size() - 1)
-            answerString += answer[i] + ", ";
+            answerString += answer[i] + "\n";
         else
             answerString += answer[i];
     }
