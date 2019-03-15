@@ -9,4 +9,10 @@ int main()
     cout << zad4_1() << endl
          << zad4_2() << endl
          << zad4_3();
+
+    ofstream result("wyniki.txt");
+
+    result << zad4_1() << endl
+           << zad4_2() << endl
+           << zad4_3();
 }
