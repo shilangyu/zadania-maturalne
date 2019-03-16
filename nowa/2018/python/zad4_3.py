@@ -9,7 +9,7 @@ with open('../dane/sygnaly.txt') as f:
 # funkcja sprawdzajaca czy string spelnia warunek z zadania
 def is_valid(s):
     # parowanie kazdej litery z kazda litera zeby sprawdzic
-    # czy ich kody ASCI sa wystarczajaco blisko siebie
+    # czy ich kody ASCII sa wystarczajaco blisko siebie
     for a in s:
         for b in s:
             if distance(a, b) > 10:

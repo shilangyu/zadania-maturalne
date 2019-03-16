@@ -8,8 +8,10 @@ with open('../dane/liczby.txt') as f:
 div2 = 0
 div8 = 0
 for line in data:
+    # jezeli liczba konczy sie zerem, to znaczy ze jest podzielne przez 2
     if line[-1] == '0':
         div2 += 1
+    # jezeli liczba konczy sie trzema zeremi, to znaczy ze jest podzielne przez 8
     if line[-3:] == '000':
         div8 += 1
 
