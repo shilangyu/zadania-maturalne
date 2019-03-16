@@ -29,5 +29,5 @@ string zad4_1()
             answer += content[i][9];
     }
 
-    return answer;
+    return "4.1. Szukane slowo: " + answer;
 }
