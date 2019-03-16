@@ -45,5 +45,5 @@ string zad6_2()
 			howManyAsyncLines++;
 	}
 
-	return "6.2) Najmniejsza liczba wierszy do usuniecia, zeby uzyskac symetryczny obraz: " + to_string(howManyAsyncLines);
+	return "6.2. Najmniejsza liczba wierszy do usuniecia, zeby uzyskac symetryczny obraz: " + to_string(howManyAsyncLines);
 }
