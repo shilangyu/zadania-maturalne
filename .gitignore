@@ -1,0 +1,8 @@
+# c++
+*.exe
+.vscode/
+wyniki.txt
+# python
+__pycache__/
+**/python/wyniki.txt
+.vscode/
