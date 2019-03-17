@@ -49,6 +49,26 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
+bool isIn(string contener, string element)
+{
+    for (int i = 0; i < contener.size(); i++)
+    {
+        if (contener[i] == element[0])
+        {
+            for (int j = 0; j < element.size(); j++)
+            {
+                if (element[j] != contener[i + j])
+                    break;
+
+                if (j == element.size() - 1)
+                    return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 string zad6_2()
 {
     string line;
@@ -56,7 +76,7 @@ string zad6_2()
 
     fstream file("../dane/slowa.txt");
 
-    //wczytywanie dancyh z pliku
+    //wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -68,5 +88,13 @@ string zad6_2()
     vector<string> firstWords = splitVector(content)[0];
     vector<string> secondWords = splitVector(content)[1];
 
-    return "";
+    int counter = 0;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (isIn(secondWords[i], firstWords[i]))
+            counter++;
+    }
+
+    return "6.2. Liczba par slow, w ktorych pierwsze slowo zawiera sie w drugim: " + to_string(counter);
 }
