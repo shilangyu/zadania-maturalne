@@ -55,5 +55,5 @@ string zad4_3()
     for (int i = 0; i < answerVector.size(); i++)
         answer += answerVector[i] + "\n";
 
-    return "4.3. Odpowiedz: " + answer;
+    return "4.3. Slowa, w ktorych litery sa maksymalnie oddalone od siebie o 10 znakow: " + answer;
 }
