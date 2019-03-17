@@ -49,6 +49,7 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
+//funkcja sprawdzająca czy jeden string zawiera się w drugim
 bool isIn(string contener, string element)
 {
     for (int i = 0; i < contener.size(); i++)
