@@ -10,6 +10,7 @@ string zad6_1()
     string line;
     vector<string> content;
 
+    //wczytywanie danych z pliku
     fstream file("../dane/slowa.txt");
 
     if (file.is_open())
@@ -19,13 +20,16 @@ string zad6_1()
     }
     file.close();
 
+    //sprawdzanie czy dane słowo kończy się na literę 'A'
     int counter = 0;
 
     for (int i = 0; i < content.size(); i++)
     {
+        //sprawdzanie czy pierwsze słowo z linii się zalicza
         if (content[i][content[i].size() - 1] == 'A')
             counter++;
 
+        //sprawdzanie czy drugie słowo z linii się zalicza
         for (int j = 0; j < content[i].size(); j++)
         {
             if (content[i][j] == ' ')
