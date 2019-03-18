@@ -6,7 +6,7 @@
 using namespace std;
 
 //funkcja rozdzielająca wektor
-vector<vector<string>> splitVector(vector<string> input)
+vector<vector<string>> splitVector1(vector<string> input)
 {
     vector<string> first;
     vector<string> second;
@@ -86,8 +86,8 @@ string zad6_2()
     file.close();
 
     //tworzenie dwóch wektorów zawierających oddzielnie pierwsze i drugie słowa z linii
-    vector<string> firstWords = splitVector(content)[0];
-    vector<string> secondWords = splitVector(content)[1];
+    vector<string> firstWords = splitVector1(content)[0];
+    vector<string> secondWords = splitVector1(content)[1];
 
     int counter = 0;
 
