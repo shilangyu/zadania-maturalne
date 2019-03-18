@@ -49,6 +49,7 @@ vector<vector<string>> splitVector2(vector<string> input)
     return output;
 }
 
+//funkcja sprawdzająca czy dwa słowa są anagramami
 bool isAnagram(string first, string second)
 {
     vector<char> secondWord;
