@@ -7,6 +7,16 @@ using namespace std;
 int main()
 {
     cout << zad6_1() << endl
+         << endl
          << zad6_2() << endl
+         << endl
          << zad6_3();
+
+    ofstream result("wyniki.txt");
+
+    result << zad6_1() << endl
+           << endl
+           << zad6_2() << endl
+           << endl
+           << zad6_3();
 }
