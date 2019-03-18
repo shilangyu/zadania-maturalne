@@ -6,7 +6,7 @@
 using namespace std;
 
 //funkcja rozdzielająca wektor
-vector<vector<string>> splitVector(vector<string> input)
+vector<vector<string>> splitVector2(vector<string> input)
 {
     vector<string> first;
     vector<string> second;
@@ -49,6 +49,48 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
+bool isAnagram(string first, string second)
+{
+    vector<char> secondWord;
+
+    if (first.size() == second.size())
+    {
+
+        for (int i = 0; i < first.size(); i++)
+            secondWord.push_back(second[i]);
+
+        bool checker;
+
+        for (int i = 0; i < first.size(); i++)
+        {
+            for (int j = 0; j < secondWord.size(); j++)
+            {
+                if (first[i] == secondWord[j])
+                {
+                    secondWord[j] = '-';
+                    checker = true;
+                    break;
+                }
+                else if (first[i] != secondWord[j])
+                    checker = false;
+            }
+
+            if (checker == false)
+                return false;
+        }
+    }
+    else
+        return false;
+
+    for (int i = 0; i < secondWord.size(); i++)
+    {
+        if (secondWord[i] != '-')
+            return false;
+    }
+
+    return true;
+}
+
 string zad6_3()
 {
     string line;
@@ -64,5 +106,24 @@ string zad6_3()
     }
     file.close();
 
-    return "";
+    //tworzenie dwóch wektorów zawierających oddzielnie pierwsze i drugie słowa z linii
+    vector<string> firstWords = splitVector2(content)[0];
+    vector<string> secondWords = splitVector2(content)[1];
+
+    vector<string> answerVector;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (isAnagram(firstWords[i], secondWords[i]))
+            answerVector.push_back(content[i]);
+    }
+
+    string answer = "\n";
+
+    for (int i = 0; i < answerVector.size(); i++)
+        answer += answerVector[i] + "\n";
+
+    int answerInt = answerVector.size();
+
+    return "6.3. Liczba par slow, ktore sa anagramami: " + to_string(answerInt) + "; " + "Pary slow, ktore sa anagramami: " + answer;
 }
