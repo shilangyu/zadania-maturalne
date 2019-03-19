@@ -5,6 +5,25 @@
 #include <vector>
 using namespace std;
 
+bool isCorrect(string line)
+{
+    if (line.size() % 4 == 0)
+    {
+        string readyToCheck = "";
+
+        for (int i = 0; i < line.size(); i++)
+        {
+            if ((i + 1) % 4 == 0)
+            {
+            }
+            else
+                readyToCheck += line[i];
+        }
+    }
+    else
+        return false;
+}
+
 string zad4_2()
 {
     string line;
@@ -19,4 +38,8 @@ string zad4_2()
             content.push_back(line);
     }
     file.close();
+
+    for (int i = 0; i < content.size(); i++)
+    {
+    }
 }
