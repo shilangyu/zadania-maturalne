@@ -1,0 +1,101 @@
+id_punktu	miasto	wojewodztwo
+1	Pruszcz Gdanski	pomorskie
+2	Puck	pomorskie
+3	Reda	pomorskie
+4	Rumia	pomorskie
+5	Skarszewy	pomorskie
+6	Skorcz	pomorskie
+7	Slupsk	pomorskie
+8	Sopot	pomorskie
+9	Starogard Gdanski	pomorskie
+10	Sztum	pomorskie
+11	Tczew	pomorskie
+12	Scinawa	dolnoslaskie
+13	Sroda Slaska	dolnoslaskie
+14	Swidnica	dolnoslaskie
+15	Swiebodzice	dolnoslaskie
+16	Swieradow Zdroj	dolnoslaskie
+17	Swierzawa	dolnoslaskie
+18	Trzebnica	dolnoslaskie
+19	Twardogora	dolnoslaskie
+20	Walbrzych	dolnoslaskie
+21	Wasosz	dolnoslaskie
+22	Wegliniec	dolnoslaskie
+23	Wiazow	dolnoslaskie
+24	Wlen	dolnoslaskie
+25	Wojcieszow	dolnoslaskie
+26	Wolow	dolnoslaskie
+27	Wroclaw	dolnoslaskie
+28	Zawidow	dolnoslaskie
+29	Zabkowice Slaskie	dolnoslaskie
+30	Zgorzelec	dolnoslaskie
+31	Ziebice	dolnoslaskie
+32	Kruszwica	kujawsko-pomorskie
+33	Lipno	kujawsko-pomorskie
+34	Lubien Kujawski	kujawsko-pomorskie
+35	Lubraniec	kujawsko-pomorskie
+36	Labiszyn	kujawsko-pomorskie
+37	Lasin	kujawsko-pomorskie
+38	Mogilno	kujawsko-pomorskie
+39	Mrocza	kujawsko-pomorskie
+40	Naklo nad Notecia	kujawsko-pomorskie
+41	Nieszawa	kujawsko-pomorskie
+42	Nowe	kujawsko-pomorskie
+43	Pakosc	kujawsko-pomorskie
+44	Piotrkow Kujawski	kujawsko-pomorskie
+45	Radziejow	kujawsko-pomorskie
+46	Radzyn Chelminski	kujawsko-pomorskie
+47	Rypin	kujawsko-pomorskie
+48	Sepolno Krajenskie	kujawsko-pomorskie
+49	Skepe	kujawsko-pomorskie
+50	Solec Kujawski	kujawsko-pomorskie
+51	Strzelno	kujawsko-pomorskie
+52	Szubin	kujawsko-pomorskie
+53	Chelm	lubelskie
+54	Deblin	lubelskie
+55	Frampol	lubelskie
+56	Hrubieszow	lubelskie
+57	Janow Lubelski	lubelskie
+58	Jozefow	lubelskie
+59	Kazimierz Dolny	lubelskie
+60	Leknica	lubuskie
+61	Malomice	lubuskie
+62	Miedzyrzecz	lubuskie
+63	Nowa Sol	lubuskie
+64	Nowe Miasteczko	lubuskie
+65	Nowogrod Bobrzanski	lubuskie
+66	Konstantynow Lodzki	lodzkie
+67	Krosniewice	lodzkie
+68	Kutno	lodzkie
+69	Lask	lodzkie
+70	Leczyca	lodzkie
+71	Lowicz	lodzkie
+72	Lodz	lodzkie
+73	Opoczno	lodzkie
+74	Ozorkow	lodzkie
+75	Krakow	malopolskie
+76	Krynica Zdroj	malopolskie
+77	Krzeszowice	malopolskie
+78	Libiaz	malopolskie
+79	Limanowa	malopolskie
+80	Makow Podhalanski	malopolskie
+81	Miechow	malopolskie
+82	Lipsko	mazowieckie
+83	Laskarzew	mazowieckie
+84	Lochow	mazowieckie
+85	Lomianki	mazowieckie
+86	Losice	mazowieckie
+87	Makow Mazowiecki	mazowieckie
+88	Marki	mazowieckie
+89	Milanowek	mazowieckie
+90	Sopot	pomorskie
+91	Starogard Gdanski	pomorskie
+92	Sztum	pomorskie
+93	Tczew	pomorskie
+94	Ustka	pomorskie
+95	Wejherowo	pomorskie
+96	Wladyslawowo	pomorskie
+97	Zukowo	pomorskie
+98	Ozarow	swietokrzyskie
+99	Pinczow	swietokrzyskie
+100	Polaniec	swietokrzyskie
