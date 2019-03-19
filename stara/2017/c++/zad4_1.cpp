@@ -5,12 +5,15 @@
 #include <vector>
 using namespace std;
 
+//funkcja sprawdzająca czy dany string jest dwucykliczny
 bool isBicycle(string line)
 {
+    //sprawdzanie czy długość stringa jest liczbą parzystą
     if (line.size() % 2 == 0)
     {
         string firstHalf = "", secondHalf = "";
 
+        //rozdzielanie stringa na dwie połowy
         for (int i = 0; i < line.size(); i++)
         {
             if (i <= (line.size() / 2) - 1)
@@ -19,6 +22,7 @@ bool isBicycle(string line)
                 secondHalf += line[i];
         }
 
+        //sprawdzanie czy dwie połowy są identyczne
         if (firstHalf == secondHalf)
             return true;
         else
@@ -33,6 +37,7 @@ string zad4_1()
     string line;
     vector<string> content;
 
+    //wczytywanie danych z pliku
     fstream file("../dane/binarne.txt");
 
     if (file.is_open())
@@ -42,6 +47,7 @@ string zad4_1()
     }
     file.close();
 
+    //wywoływanie funkcji isBicycle dla każdego stringa z wektora content
     vector<string> bicycles;
 
     for (int i = 0; i < content.size(); i++)
@@ -50,6 +56,7 @@ string zad4_1()
             bicycles.push_back(content[i]);
     }
 
+    //sprawdzanie ile wynosi maksymalna długość stringa
     int maxLength = 0;
 
     for (int i = 0; i < bicycles.size(); i++)
@@ -60,6 +67,7 @@ string zad4_1()
 
     string longest;
 
+    //znajdowanie najdłuższego napisu
     for (int i = 0; i < bicycles.size(); i++)
     {
         if (bicycles[i].size() == maxLength)
