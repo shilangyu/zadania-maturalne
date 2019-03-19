@@ -3,7 +3,23 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cmath>
 using namespace std;
+
+int toDecimal(string line)
+{
+    int output = 0;
+
+    for (int i = line.size(); i >= 0; i--)
+    {
+        string oneChar = "";
+        oneChar += line[i];
+
+        output += pow(atoi(oneChar.c_str()), i);
+    }
+
+    return output;
+}
 
 bool isCorrect(string line)
 {
@@ -15,6 +31,10 @@ bool isCorrect(string line)
         {
             if ((i + 1) % 4 == 0)
             {
+                if (toDecimal(readyToCheck) >= 0 and toDecimal(readyToCheck) <= 9)
+                    return true;
+                else
+                    return false;
             }
             else
                 readyToCheck += line[i];
@@ -39,7 +59,13 @@ string zad4_2()
     }
     file.close();
 
+    int howManyFalse = 0;
+
     for (int i = 0; i < content.size(); i++)
     {
+        if (isCorrect(content[i]) == false)
+            howManyFalse++;
     }
+
+    return to_string(howManyFalse);
 }
