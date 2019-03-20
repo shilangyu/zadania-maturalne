@@ -10,17 +10,16 @@ int toDecimal(string line)
 {
     int output = 0;
 
-    for (int i = line.size(); i >= 0; i--)
+    for (int i = line.size() - 1; i >= 0; i--)
     {
-        string oneChar = "";
-        oneChar += line[i];
-
-        output += pow(atoi(oneChar.c_str()), i);
+        if (line[i] == '1')
+            output += pow(2, i);
     }
 
     return output;
 }
 
+//work in progress
 bool isCorrect(string line)
 {
     if (line.size() % 4 == 0)
