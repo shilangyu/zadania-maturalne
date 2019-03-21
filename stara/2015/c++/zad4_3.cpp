@@ -71,5 +71,5 @@ string zad4_3()
     for (int i = 0; i < biggest.size(); i++)
         answer += biggest[i] + "\n";
 
-    return "4.3. Dlugosc najdluzszego bloku skladajacego sie z samych zer: " + to_string(max) + "\n Napisy, ktore zawieraja takie bloki: " + answer;
+    return "4.3. Dlugosc najdluzszego bloku skladajacego sie z samych zer: " + to_string(max) + "\nNapisy, ktore zawieraja takie bloki: " + answer;
 }
