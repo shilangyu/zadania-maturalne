@@ -20,12 +20,28 @@ string zad4_1()
     }
     file.close();
 
+    //przechodzenie po zawartości pliku, zliczanie zer i jedynek poszczególnych elementów
+    //i zliczanie ile jest elementów, które mają więcej zer niż jedynek
+    int howMany = 0;
+
     for (int i = 0; i < content.size(); i++)
     {
         int zeros = 0, ones = 0;
 
         for (int j = 0; j < content[i].size(); j++)
         {
+            if (content[i][j] == '0')
+                zeros++;
+            else
+                ones++;
         }
+
+        if (zeros > ones)
+            howMany++;
+
+        zeros = 0;
+        ones = 0;
     }
+
+    return "4.1. Liczba slow, ktore maja wiecej zer niz jedynek: " + to_string(howMany);
 }
