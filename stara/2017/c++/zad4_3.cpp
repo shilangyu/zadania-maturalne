@@ -5,6 +5,7 @@
 #include <fstream>
 using namespace std;
 
+//funkcja zwracająca wartość w systemie dziesiętnym danego zapisu binarnego
 int toDecimal2(string line)
 {
     int output = 0;
@@ -25,6 +26,7 @@ string zad4_3()
 
     fstream file("../dane/binarne.txt");
 
+    //wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -32,6 +34,8 @@ string zad4_3()
     }
     file.close();
 
+    //"filtrowanie" vectora z zawartością, sprawdzanie czy dany element w zapisie dziesiętnym wynosi więcej niż 65 535
+    //i zapisywanie poprawnych danych do kolejnego vectora
     vector<string> goodOnes;
 
     for (int i = 0; i < content.size(); i++)
@@ -40,6 +44,7 @@ string zad4_3()
             goodOnes.push_back(content[i]);
     }
 
+    //szukanie maksymalnej wartości spośród tych "przefiltrowanych" elementów oraz samego tego elementu
     int maxValue = 0;
     string chosenOne;
 
