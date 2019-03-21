@@ -12,14 +12,15 @@ int toDecimal(string line)
 
     for (int i = line.size() - 1; i >= 0; i--)
     {
-        if (line[i] == '1')
+        if (line[line.size() - i - 1] == '1')
             output += pow(2, i);
+
+        counter++;
     }
 
     return output;
 }
 
-//work in progress
 bool isCorrect(string line)
 {
     if (line.size() % 4 == 0)
@@ -30,14 +31,16 @@ bool isCorrect(string line)
         {
             if ((i + 1) % 4 == 0)
             {
-                if (toDecimal(readyToCheck) >= 0 and toDecimal(readyToCheck) <= 9)
-                    return true;
-                else
+                if (toDecimal(readyToCheck) < 0 or toDecimal(readyToCheck) > 9)
                     return false;
+
+                readyToCheck = "";
             }
             else
                 readyToCheck += line[i];
         }
+
+        return true;
     }
     else
         return false;
