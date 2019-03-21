@@ -5,6 +5,7 @@
 #include <vector>
 using namespace std;
 
+//funkcja zwracająca wartość odpowiadającą długości najdłuższego bloku składającego się z samych zer
 int biggestZeroBlock(string line)
 {
     int currentZeros, maxZeros = 0;
@@ -15,7 +16,7 @@ int biggestZeroBlock(string line)
         {
             int zeros = 0;
 
-            for (int j = i; j < line.size() - i; j++)
+            for (int j = i; j < line.size(); j++)
             {
                 if (line[j] == '0')
                     zeros++;
@@ -51,12 +52,14 @@ string zad4_3()
     vector<string> biggest;
     int max = 0;
 
+    //przechodzenie po vectorze z zawartością i sprawdzanie jaki jest max występowania zer z rzędu
     for (int i = 0; i < content.size(); i++)
     {
         if (biggestZeroBlock(content[i]) > max)
             max = biggestZeroBlock(content[i]);
     }
 
+    //dodawanie elementów do oddzielnego vectora, które zawierają blok o maksymalnej długości
     for (int i = 0; i < content.size(); i++)
     {
         if (biggestZeroBlock(content[i]) == max)
