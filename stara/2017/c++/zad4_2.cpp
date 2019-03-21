@@ -14,8 +14,6 @@ int toDecimal(string line)
     {
         if (line[line.size() - i - 1] == '1')
             output += pow(2, i);
-
-        counter++;
     }
 
     return output;
