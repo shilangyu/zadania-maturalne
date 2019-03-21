@@ -62,12 +62,24 @@ string zad4_2()
     file.close();
 
     int howManyFalse = 0;
+    vector<string> falseNumbers;
 
     for (int i = 0; i < content.size(); i++)
     {
         if (isCorrect(content[i]) == false)
+        {
             howManyFalse++;
+            falseNumbers.push_back(content[i]);
+        }
     }
 
-    return "4.2. Liczba slow niepoprawnych: " + to_string(howManyFalse);
+    int minLength = 10000;
+
+    for (int i = 0; i < falseNumbers.size(); i++)
+    {
+        if (falseNumbers[i].size() < minLength)
+            minLength = falseNumbers[i].size();
+    }
+
+    return "4.2. Liczba slow niepoprawnych: " + to_string(howManyFalse) + "; Dlugosc najkrotszego niepoprawnie zapisanego napisu: " + to_string(minLength);
 }
