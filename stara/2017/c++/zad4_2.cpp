@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-int toDecimal(string line)
+int toDecimal1(string line)
 {
     int output = 0;
 
@@ -31,7 +31,7 @@ bool isCorrect(string line)
             {
                 readyToCheck += line[i];
 
-                if (toDecimal(readyToCheck) > 9)
+                if (toDecimal1(readyToCheck) > 9)
                     return false;
 
                 readyToCheck = "";
