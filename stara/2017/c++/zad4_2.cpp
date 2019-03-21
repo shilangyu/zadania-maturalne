@@ -29,7 +29,9 @@ bool isCorrect(string line)
         {
             if ((i + 1) % 4 == 0)
             {
-                if (toDecimal(readyToCheck) < 0 or toDecimal(readyToCheck) > 9)
+                readyToCheck += line[i];
+
+                if (toDecimal(readyToCheck) > 9)
                     return false;
 
                 readyToCheck = "";
@@ -67,5 +69,5 @@ string zad4_2()
             howManyFalse++;
     }
 
-    return to_string(howManyFalse);
+    return "4.2. Liczba slow niepoprawnych: " + to_string(howManyFalse);
 }
