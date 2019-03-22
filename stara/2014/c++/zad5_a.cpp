@@ -50,5 +50,5 @@ string zad5_a()
             howMany++;
     }
 
-    return to_string(howMany);
+    return "5 a) Liczba napisow, ktorych suma wartosci ASCII jest liczba pierwsza: " + to_string(howMany);
 }
