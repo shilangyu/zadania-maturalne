@@ -5,6 +5,7 @@
 #include <vector>
 using namespace std;
 
+//funkcja sprawdzająca czy napis jest rosnący
 bool isGrowing(string line)
 {
     int previous = int(line[0]);
@@ -35,6 +36,7 @@ string zad5_b()
     }
     file.close();
 
+    //dodawanie tych elementów do vectora growing, które są rosnące
     vector<string> growing;
 
     for (int i = 0; i < content.size(); i++)
@@ -43,6 +45,7 @@ string zad5_b()
             growing.push_back(content[i]);
     }
 
+    //dodawanie elementów z vectora growing do stringa answer
     string answer = "\n";
 
     for (int i = 0; i < growing.size(); i++)
