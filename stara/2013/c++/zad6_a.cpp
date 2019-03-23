@@ -28,5 +28,5 @@ string zad6_a()
             howMany++;
     }
 
-    return to_string(howMany);
+    return "6 a) Liczba liczb, ktore maja te sama cyfre na poczatku co na koncu: " + to_string(howMany);
 }
