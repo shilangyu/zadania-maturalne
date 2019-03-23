@@ -33,6 +33,20 @@ string octalToBinary(string line)
     return result;
 }
 
+//funkcja zamieniająca zapis binarny na zapis w systemie dziesiętnym
+int binaryToDecimal(string line)
+{
+    int output = 0;
+
+    for (int i = line.size() - 1; i >= 0; i--)
+    {
+        if (line[line.size() - i - 1] == '1')
+            output += pow(2, i);
+    }
+
+    return output;
+}
+
 string zad6_a()
 {
     string line;
@@ -52,8 +66,6 @@ string zad6_a()
 
     for (int i = 0; i < content.size(); i++)
     {
-        if (content[i][0] == content[i][content.size() - 1])
-            howMany++;
     }
 
     return to_string(howMany);
