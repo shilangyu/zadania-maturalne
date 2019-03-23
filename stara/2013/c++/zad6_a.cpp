@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <cmath>
 using namespace std;
 
 string zad6_a()
