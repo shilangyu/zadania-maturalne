@@ -5,6 +5,34 @@
 #include <fstream>
 using namespace std;
 
+//funkcja zamieniająca zapis w systemie ósemkowym na zapis binarny
+string octalToBinary(string line)
+{
+    string result = "";
+
+    for (int i = 0; i < line.size(); i++)
+    {
+        if (line[i] == '0')
+            result += "000";
+        else if (line[i] == '1')
+            result += "001";
+        else if (line[i] == '2')
+            result += "010";
+        else if (line[i] == '3')
+            result += "011";
+        else if (line[i] == '4')
+            result += "100";
+        else if (line[i] == '5')
+            result += "101";
+        else if (line[i] == '6')
+            result += "110";
+        else if (line[i] == '7')
+            result += "111";
+    }
+
+    return result;
+}
+
 string zad6_a()
 {
     string line;
@@ -20,5 +48,13 @@ string zad6_a()
     }
     file.close();
 
-    return "";
+    int howMany = 0;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (content[i][0] == content[i][content.size() - 1])
+            howMany++;
+    }
+
+    return to_string(howMany);
 }
