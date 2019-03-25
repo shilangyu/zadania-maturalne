@@ -6,17 +6,15 @@ using namespace std;
 
 int main()
 {
-    cout << zad5_a() << endl
-         << endl
-         << zad5_b() << endl
-         << endl
-         << zad5_c();
+     cout << zad5_a() << endl
+          << endl
+          << zad5_b() << endl
+          << zad5_c();
 
-    ofstream result("wyniki.txt");
+     ofstream result("wyniki.txt");
 
-    result << zad5_a() << endl
-           << endl
-           << zad5_b() << endl
-           << endl
-           << zad5_c();
+     result << zad5_a() << endl
+            << endl
+            << zad5_b() << endl
+            << zad5_c();
 }
