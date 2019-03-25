@@ -12,7 +12,7 @@ bool isGrowing(string line)
 
     for (int i = 1; i < line.size(); i++)
     {
-        if (previous > line[i])
+        if (previous >= line[i])
             return false;
 
         previous = line[i];
