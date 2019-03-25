@@ -75,5 +75,5 @@ string zad6_b()
             howMany++;
     }
 
-    return "Liczba liczb, ktore w zapisie dziesietnym maja te sama cyfre na poczatku co na koncu: " + to_string(howMany);
+    return "6 b) Liczba liczb, ktore w zapisie dziesietnym maja te sama cyfre na poczatku co na koncu: " + to_string(howMany);
 }
