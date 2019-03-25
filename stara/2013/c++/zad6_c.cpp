@@ -76,12 +76,14 @@ string zad6_c()
 
     vector<string> goodOnes;
 
+    //dodawanie elementów, które spełniają warunki zadania do vectora goodOnes
     for (int i = 0; i < content.size(); i++)
     {
         if (isNotShrinking(content[i]))
             goodOnes.push_back(content[i]);
     }
 
+    //sprawdzanie min i max i zapisywanie dwóch wersji tej samej liczby (w systemie ósemkowym i dziesiętnym)
     int max = 0, min = 10000;
     string minNumberDecimal, maxNumberDecimal, minNumberOctal, maxNumberOctal;
 
