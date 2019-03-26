@@ -26,10 +26,13 @@ string zad5_1()
     }
     file.close();
 
-    int rows = sizeof boardOriginal / sizeof originalBoard[0]; // ilość wierszy w oryginalnej tablicy
-    int cols = sizeof boardOriginal / rows;                    // ilość kolumn w oryginalnej tablicy
+    int rowsOriginal = sizeof boardOriginal / sizeof boardOriginal[0]; // ilość wierszy w oryginalnej tablicy
+    int colsOriginal = sizeof boardOriginal / rowsOriginal;            // ilość kolumn w oryginalnej tablicy
 
-    char boardFake[13][21];
+    char boardExtended[13][21];
+
+    int rowsExtended = sizeof boardExtended / sizeof boardExtended[0]; // ilość wierszy w rozszerzonej tablicy
+    int colsExtended = sizeof boardExtended / rowsExtended;            // ilość kolumn w rozszerzonej tablicy
 
     return "";
 }
