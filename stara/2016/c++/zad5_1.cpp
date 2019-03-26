@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include <vector>
 using namespace std;
 
 string zad5_1()
