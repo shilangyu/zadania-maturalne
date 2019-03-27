@@ -7,17 +7,19 @@ using namespace std;
 
 vector<string> extend(vector<string> original)
 {
-    vector<string> extended = original;
+    string top = original[0], bottom = original[original.size() - 1];
 
-    for (int i = 0; i < extended.size(); i++)
-        extended[i] += extended[i][0];
-
-    extended.push_back(extended[0]);
-
-    extended[extended.size() - 1][extended[extended.size() - 1].size() - 1] = extended[0][0];
-
-    return extended;
+    return original;
 }
+
+// vector<string> nextGeneration(vector<string> board)
+// {
+//     for (int i = 0; i < board.size(); i++)
+//     {
+//     }
+
+//     return board;
+// }
 
 string zad5_1()
 {
