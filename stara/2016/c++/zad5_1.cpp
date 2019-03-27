@@ -7,19 +7,10 @@ using namespace std;
 
 vector<string> extend(vector<string> original)
 {
-    string top = original[0], bottom = original[original.size() - 1], left = "", right = "";
-
-    for (int i = 0; i < original.size(); i++)
-    {
-        left += original[i][0];
-        right += original[i][original[i].size() - 1];
-    }
+    string top = original[0], bottom = original[original.size() - 1];
 
     top = top[top.size() - 1] + top + top[0];
     bottom = bottom[bottom.size() - 1] + bottom + bottom[0];
-
-    left = left[left.size() - 1] + left + left[0];
-    right = right[right.size() - 1] + right + right[0];
 
     vector<string> extended;
 
@@ -38,14 +29,64 @@ vector<string> extend(vector<string> original)
     return extended;
 }
 
-// vector<string> nextGeneration(vector<string> board)
-// {
-//     for (int i = 0; i < board.size(); i++)
-//     {
-//     }
+bool isAlive(char cell, string neighbours)
+{
+    int counter = 0;
 
-//     return board;
-// }
+    for (int i = 0; neighbours.size(); i++)
+    {
+        if (neighbours[i] == 'X')
+            counter++;
+    }
+
+    if (cell == 'X')
+    {
+        if (counter == 2 or counter == 3)
+            return true;
+        else
+            return false;
+    }
+    else
+    {
+        if (counter == 3)
+            return true;
+        else
+            return false;
+    }
+}
+
+vector<string> nextGeneration(vector<string> boardOriginal, vector<string> boardExtended)
+{
+    vector<string> boardNew;
+
+    for (int i = 0; i < boardOriginal.size(); i++)
+    {
+        string readyToPush = "";
+
+        for (int j = 0; j < boardOriginal[i].size(); j++)
+        {
+            string neighbours = "";
+
+            neighbours += boardExtended[i - 1][j - 1];
+            neighbours += boardExtended[i - 1][j];
+            neighbours += boardExtended[i - 1][j + 1];
+            neighbours += boardExtended[i][j + 1];
+            neighbours += boardExtended[i + 1][j + 1];
+            neighbours += boardExtended[i + 1][j];
+            neighbours += boardExtended[i + 1][j - 1];
+            neighbours += boardExtended[i][j - 1];
+
+            if (isAlive(boardOriginal[i][j], neighbours))
+                readyToPush += 'X';
+            else
+                readyToPush += '.';
+        }
+
+        boardNew.push_back(readyToPush);
+    }
+
+    return boardNew;
+}
 
 string zad5_1()
 {
@@ -63,12 +104,16 @@ string zad5_1()
     }
     file.close();
 
-    vector<string> boardExtended = extend(boardOriginal);
+    cout << "before functions";
+
+    vector<string> secondGen = nextGeneration(boardOriginal, extend(boardOriginal));
+
+    cout << "after functions";
 
     ofstream test("test.txt");
 
-    for (int i = 0; i < boardExtended.size(); i++)
-        test << boardExtended[i] << endl;
+    for (int i = 0; i < secondGen.size(); i++)
+        test << secondGen[i] << endl;
 
     return "";
 }
