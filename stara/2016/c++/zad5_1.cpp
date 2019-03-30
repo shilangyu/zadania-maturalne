@@ -21,9 +21,7 @@ vector<string> extend(vector<string> original)
         else if (i == original.size() + 1)
             extended.push_back(top);
         else
-        {
             extended.push_back(original[i - 1][original.size() - 1] + original[i - 1] + original[i - 1][0]);
-        }
     }
 
     return extended;
@@ -33,7 +31,7 @@ bool isAlive(char cell, string neighbours)
 {
     int counter = 0;
 
-    for (int i = 0; neighbours.size(); i++)
+    for (int i = 0; i < neighbours.size(); i++)
     {
         if (neighbours[i] == 'X')
             counter++;
@@ -59,11 +57,11 @@ vector<string> nextGeneration(vector<string> boardOriginal, vector<string> board
 {
     vector<string> boardNew;
 
-    for (int i = 0; i < boardOriginal.size(); i++)
+    for (int i = 1; i < boardExtended.size() - 1; i++)
     {
         string readyToPush = "";
 
-        for (int j = 0; j < boardOriginal[i].size(); j++)
+        for (int j = 1; j < boardExtended[i].size() - 1; j++)
         {
             string neighbours = "";
 
@@ -76,7 +74,7 @@ vector<string> nextGeneration(vector<string> boardOriginal, vector<string> board
             neighbours += boardExtended[i + 1][j - 1];
             neighbours += boardExtended[i][j - 1];
 
-            if (isAlive(boardOriginal[i][j], neighbours))
+            if (isAlive(boardExtended[i][j], neighbours))
                 readyToPush += 'X';
             else
                 readyToPush += '.';
