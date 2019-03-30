@@ -104,14 +104,15 @@ string zad5_1()
 
     cout << "before functions";
 
-    vector<string> secondGen = nextGeneration(boardOriginal, extend(boardOriginal));
+    for (int i = 0; i < 36; i++)
+        boardOriginal = nextGeneration(boardOriginal, extend(boardOriginal));
 
     cout << "after functions";
 
     ofstream test("test.txt");
 
-    for (int i = 0; i < secondGen.size(); i++)
-        test << secondGen[i] << endl;
+    for (int i = 0; i < boardOriginal.size(); i++)
+        test << boardOriginal[i] << endl;
 
     return "";
 }
