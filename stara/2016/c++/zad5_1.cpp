@@ -7,16 +7,10 @@ using namespace std;
 
 vector<string> extend(vector<string> original)
 {
-    string top = original[0], bottom = original[original.size() - 1], smallerBottom = "", smallerTop = "";
+    string top = original[0], bottom = original[original.size() - 1];
 
-    for (int i = 1; i < original[0].size() - 1; i++)
-    {
-        smallerBottom += original[original.size() - 1][i];
-        smallerTop += original[0][i];
-    }
-
-    top = top[top.size() - 1] + smallerTop + top[0];
-    bottom = bottom[bottom.size() - 1] + smallerBottom + bottom[0];
+    top = top[top.size() - 1] + top + top[0];
+    bottom = bottom[bottom.size() - 1] + top + bottom[0];
 
     vector<string> extended;
 
