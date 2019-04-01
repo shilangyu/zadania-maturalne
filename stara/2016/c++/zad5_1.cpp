@@ -7,22 +7,19 @@ using namespace std;
 
 vector<string> extend(vector<string> original)
 {
-    string top = original[0], bottom = original[original.size() - 1];
+    string top = "", bottom = "";
 
-    top = top[top.size() - 1] + top + top[0];
-    bottom = bottom[bottom.size() - 1] + top + bottom[0];
+    top += original[0][original[0].size() - 1] + original[0] + original[0][0];
+    bottom += original[original.size() - 1][original[original.size() - 1].size() - 1] + original[original.size() - 1] + original[original.size() - 1][0];
 
     vector<string> extended;
 
-    for (int i = 0; i < original.size() + 2; i++)
-    {
-        if (i == 0)
-            extended.push_back(bottom);
-        else if (i == original.size() + 1)
-            extended.push_back(top);
-        else
-            extended.push_back(original[i - 1][original.size() - 1] + original[i - 1] + original[i - 1][0]);
-    }
+    extended.push_back(bottom);
+
+    for (int i = 0; i < original.size(); i++)
+        extended.push_back(original[i][original[i].size() - 1] + original[i] + original[i][0]);
+
+    extended.push_back(top);
 
     return extended;
 }
@@ -102,12 +99,8 @@ string zad5_1()
     }
     file.close();
 
-    cout << "before functions";
-
     for (int i = 0; i < 36; i++)
         boardOriginal = nextGeneration(boardOriginal, extend(boardOriginal));
-
-    cout << "after functions";
 
     ofstream test("test.txt");
 
