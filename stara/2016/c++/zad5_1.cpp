@@ -99,13 +99,15 @@ string zad5_1()
     }
     file.close();
 
+    // 36 razy wywołuję funkcję nextGeneration
     for (int i = 0; i < 36; i++)
         boardOriginal = nextGeneration(boardOriginal, extend(boardOriginal));
 
+    // zapisuję rozwiązanie do pliku i sprawdzam ile żywych sąsiadów ma komórka w 2 wierszu i 19 kolumnie
     ofstream test("test.txt");
 
     for (int i = 0; i < boardOriginal.size(); i++)
         test << boardOriginal[i] << endl;
 
-    return "";
+    return "5.1. Liczba sasiadow w 2 wierszu i 19 kolumnie w 37 generacji: 4";
 }
