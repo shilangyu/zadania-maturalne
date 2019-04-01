@@ -112,8 +112,10 @@ string zad5_2()
     }
     file.close();
 
+    // wywoływanie funkcji jeden raz, przechodząc do drugiej generacji
     boardOriginal = nextGeneration2(boardOriginal, extend2(boardOriginal));
 
+    // przechodzenie po planszy w drugiej generacji i zliczanie żywych komórek
     int howManyAlive = 0;
 
     for (int i = 0; i < boardOriginal.size(); i++)
