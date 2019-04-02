@@ -111,7 +111,7 @@ string zad4_3()
             theSmallest.push_back(content[i]);
     }
 
-    // okazało się, że zostało 5 liczb, z których możemy wywnioskować, że liczb 100 jest najmniejsza
+    // okazało się, że zostało 5 liczb, z których możemy wywnioskować, że liczba 100 jest najmniejsza
     //znajdowanie numeru wiersza zawierającego najmniejszą liczbę
     int smallestNumber;
 
