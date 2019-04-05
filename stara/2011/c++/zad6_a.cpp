@@ -17,6 +17,7 @@ string zad6_a()
         while (getline(file, line))
             content.push_back(line);
     }
+    file.close();
 
     int dividedByTwo = 0;
 

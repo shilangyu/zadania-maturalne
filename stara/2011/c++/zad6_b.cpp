@@ -32,6 +32,7 @@ string zad6_b()
         while (getline(file, line))
             content.push_back(line);
     }
+    file.close();
 
     vector<string> decimalNumbers;
 
