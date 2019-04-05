@@ -6,6 +6,7 @@
 #include <cmath>
 using namespace std;
 
+// funkcja zamieniająca liczbę zapisaną w systemie binarnym na zapis dziesiętny
 string binaryToDecimal(string line)
 {
     int output = 0;
@@ -36,4 +37,25 @@ string zad6_b()
 
     for (int i = 0; i < content.size(); i++)
         decimalNumbers.push_back(binaryToDecimal(content[i]));
+
+    int max = 0;
+
+    for (int i = 0; i < decimalNumbers.size(); i++)
+    {
+        if (atoi(decimalNumbers[i].c_str()) > max)
+            max = atoi(decimalNumbers[i].c_str());
+    }
+
+    string maxDecimal, maxBinary;
+
+    for (int i = 0; i < decimalNumbers.size(); i++)
+    {
+        if (atoi(decimalNumbers[i].c_str()) == max)
+        {
+            maxDecimal = decimalNumbers[i];
+            maxBinary = content[i];
+        }
+    }
+
+    return "6 b) Najwieksza liczba w zapisie binarnym: " + maxDecimal + "; Najwieksza liczba w zapisie dziesietnym: " + maxBinary;
 }
