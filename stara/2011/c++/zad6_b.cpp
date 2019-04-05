@@ -19,7 +19,7 @@ string binaryToDecimal(string line)
     return to_string(output);
 }
 
-string zad6_a()
+string zad6_b()
 {
     string line;
     vector<string> content;
@@ -31,4 +31,9 @@ string zad6_a()
         while (getline(file, line))
             content.push_back(line);
     }
+
+    vector<string> decimalNumbers;
+
+    for (int i = 0; i < content.size(); i++)
+        decimalNumbers.push_back(binaryToDecimal(content[i]));
 }
