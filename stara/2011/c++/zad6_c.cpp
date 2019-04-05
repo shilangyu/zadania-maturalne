@@ -72,8 +72,8 @@ string zad6_c()
     for (int i = 0; i < ninesDecimal.size(); i++)
         sum += atoi(ninesDecimal[i].c_str());
 
-    // wywoływanie funkcji, która zamieni wynik w systemie dziesiętnym na zapis w binarnym 
+    // wywoływanie funkcji, która zamieni wynik w systemie dziesiętnym na zapis w binarnym
     string sumBinary = decimalToBinary(sum);
 
-    return "6 c) Suma liczb (w systemie dwojkowym) skladajacych sie tylko z 9 liczb: " + sumBinary;
+    return "6 c) Liczba dziewieciocyfrowych: " + to_string(nines.size()) + "; Suma liczb (w systemie dwojkowym) skladajacych sie tylko z 9 liczb: " + sumBinary;
 }
