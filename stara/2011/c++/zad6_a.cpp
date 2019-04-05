@@ -18,7 +18,7 @@ string zad6_a()
             content.push_back(line);
     }
 
-    int dividedByTwo;
+    int dividedByTwo = 0;
 
     for (int i = 0; i < content.size(); i++)
     {
