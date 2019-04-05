@@ -1,4 +1,4 @@
 # c++
 *.exe
 .vscode/
-wyniki.txt
+**/c++/wyniki.txt
