@@ -11,7 +11,7 @@ string encode(string word, string key)
 
     if (key.size() < word.size())
     {
-        int extend = word.size() / key.size();
+        int extend = (word.size()) / (key.size());
 
         for (int i = 0; i < extend; i++)
             key += key;
@@ -19,7 +19,7 @@ string encode(string word, string key)
 
     for (int i = 0; i < word.size(); i++)
     {
-        int currentKey = int(key[i]), currentWord = int(word[i]), value = currentKey + currentWord;
+        int currentKey = int(key[i]) - 64, currentWord = int(word[i]), value = currentKey + currentWord;
 
         if (value > 90)
             value -= 26;
@@ -53,4 +53,9 @@ string zad4_a()
             keys.push_back(line);
     }
     keysRead.close();
+
+    ofstream test("test.txt");
+
+    for (int i = 0; i < words.size(); i++)
+        test << encode(words[i], keys[i]) << endl;
 }
