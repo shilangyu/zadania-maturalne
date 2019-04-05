@@ -20,6 +20,23 @@ string binaryToDecimal1(string line)
     return to_string(output);
 }
 
+string decimalToBinary(int number)
+{
+    string binaryReverse = "", output = "";
+
+    while (number != 0)
+    {
+        binaryReverse += to_string(number % 2);
+
+        number = number / 2;
+    }
+
+    for (int i = binaryReverse.size() - 1; i >= 0; i--)
+        output += binaryReverse[i];
+
+    return output;
+}
+
 string zad6_c()
 {
     string line;
@@ -51,5 +68,7 @@ string zad6_c()
     for (int i = 0; i < ninesDecimal.size(); i++)
         sum += atoi(ninesDecimal[i].c_str());
 
-    return to_string(sum);
+    string sumBinary = decimalToBinary(sum);
+
+    return "6 c) Suma liczb (w systemie dwojkowym) skladajacych sie tylko z 9 liczb: " + sumBinary;
 }
