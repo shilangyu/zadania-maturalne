@@ -5,6 +5,7 @@
 #include <vector>
 using namespace std;
 
+// funkcja szyfrujaca stringa
 string encode(string word, string key)
 {
     string output = "";
@@ -54,8 +55,10 @@ string zad4_a()
     }
     keysRead.close();
 
-    ofstream test("test.txt");
+    string result = "\n";
 
     for (int i = 0; i < words.size(); i++)
-        test << encode(words[i], keys[i]) << endl;
+        result += encode(words[i], keys[i]) + '\n';
+
+    return "4 a) Zaszyfrowane slowa: " + result;
 }
