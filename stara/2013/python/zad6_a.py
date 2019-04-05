@@ -1,4 +1,4 @@
-# wczytanie napisow
+# wczytanie liczb
 with open('../dane/dane.txt') as f:
     data = []
     for word in f.readlines():
