@@ -81,7 +81,7 @@ bool isSetAnagram(vector<string> words)
     return true;
 }
 
-string zad4_a()
+string zad4_b()
 {
     string line;
     vector<string> content;
@@ -95,4 +95,14 @@ string zad4_a()
             content.push_back(line);
     }
     file.close();
+
+    string answer = "\n";
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (isSetAnagram(split1(content[i])))
+            answer += content[i] + '\n';
+    }
+
+    return "4 b) Wiersze, w ktorych slowa sa anagramami: " + answer;
 }
