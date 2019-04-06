@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+// funkcja zwracająca vector z odseparowanymi słowami
 vector<string> split(string words)
 {
     vector<string> output;
@@ -25,6 +26,7 @@ vector<string> split(string words)
     return output;
 }
 
+// funkcja sprawdzająca czy wszystkie stringi w vectorze mają taką samą długość
 bool areEqual(vector<string> words)
 {
     int size;
@@ -60,6 +62,7 @@ string zad4_a()
 
     string answer = "\n";
 
+    // przechodzenie po zawartości pliku i sprawdzanie które wiersze spełniają wymaganie zadania
     for (int i = 0; i < content.size(); i++)
     {
         if (areEqual(split(content[i])))
