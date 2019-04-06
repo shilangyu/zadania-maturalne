@@ -47,6 +47,28 @@ bool isAnagram(string first, string second)
     return true;
 }
 
+// funkcja zwracająca vector z odseparowanymi słowami
+vector<string> split1(string words)
+{
+    vector<string> output;
+    string readyToPush = "";
+
+    for (int i = 0; i < words.size(); i++)
+    {
+        if (words[i] != ' ')
+            readyToPush += words[i];
+        else
+        {
+            output.push_back(readyToPush);
+            readyToPush = "";
+        }
+    }
+
+    output.push_back(readyToPush);
+
+    return output;
+}
+
 string zad4_a()
 {
     string line;
