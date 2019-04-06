@@ -23,5 +23,5 @@ for word in data:
 
 
 # wyswietlenie odpowiedzi
-answer = f'4.2. Liczba napisow nie poprawnie zapisanych w BCD: {badtens}; Dlugosc najkrotszego takiego napisu: {len(shortest)}'
+answer = f'4.2. Liczba napisow niepoprawnie zapisanych w BCD: {badtens}; Dlugosc najkrotszego takiego napisu: {len(shortest)}'
 print(answer)

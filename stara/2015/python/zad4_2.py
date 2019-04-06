@@ -17,5 +17,5 @@ for word in data:
 
 
 # wyswietlenie odpowiedzi
-answer = f'4.2. Liczba slow ktore skladaja sie z dwoch nie pustych blokow 0 -> 1: {twoblocks}'
+answer = f'4.2. Liczba slow ktore skladaja sie z dwoch niepustych blokow 0 -> 1: {twoblocks}'
 print(answer)
