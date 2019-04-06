@@ -25,6 +25,24 @@ vector<string> split(string words)
     return output;
 }
 
+bool areEqual(vector<string> words)
+{
+    int size;
+
+    for (int i = 0; i < words.size(); i++)
+    {
+        if (i == 0)
+            size = words[i].size();
+        else
+        {
+            if (words[i].size() != size)
+                return false;
+        }
+    }
+
+    return true;
+}
+
 string zad4_a()
 {
     string line;
