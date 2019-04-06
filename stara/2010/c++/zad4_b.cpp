@@ -69,6 +69,18 @@ vector<string> split1(string words)
     return output;
 }
 
+// funkcja sprawdzająca czy wszystkie słowa z wiersza są anagramami
+bool isSetAnagram(vector<string> words)
+{
+    for (int i = 1; i < words.size(); i++)
+    {
+        if (isAnagram(words[0], words[i]) == false)
+            return false;
+    }
+
+    return true;
+}
+
 string zad4_a()
 {
     string line;
