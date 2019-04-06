@@ -58,5 +58,13 @@ string zad4_a()
     }
     file.close();
 
-    return "";
+    string answer = "\n";
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (areEqual(split(content[i])))
+            answer += content[i] + '\n';
+    }
+
+    return "4 a) Wiersze, w ktorych kazde slowo ma te sama dlugosc: " + answer;
 }
