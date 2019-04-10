@@ -72,5 +72,20 @@ string zad5_a()
         wordsB.push_back(readyToPush);
     }
 
-    return "";
+    int howManyPali = 0;
+
+    for (int i = 0; i < content.size(); i++)
+    {
+        if (isPali(wordsA[i]))
+        {
+            howManyPali++;
+        }
+
+        if (isPali(wordsB[i]))
+        {
+            howManyPali++;
+        }
+    }
+
+    return "Liczba palindromow w pliku: " + to_string(howManyPali);
 }
