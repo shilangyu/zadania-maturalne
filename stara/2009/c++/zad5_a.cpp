@@ -5,6 +5,23 @@
 #include <vector>
 using namespace std;
 
+bool isPali(string word)
+{
+    string reversed = "";
+
+    for (int i = word.size() - 1; i >= 0; i--)
+    {
+        reversed += word[i];
+    }
+
+    if (word == reversed)
+    {
+        return true;
+    }
+
+    return false;
+}
+
 string zad5_a()
 {
     string line;
@@ -47,7 +64,9 @@ string zad5_a()
                 readyToPush += content[i][j];
             }
             else
+            {
                 readyToPush += content[i][j];
+            }
         }
 
         wordsB.push_back(readyToPush);
