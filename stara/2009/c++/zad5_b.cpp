@@ -86,5 +86,5 @@ string zad5_b()
         }
     }
 
-    return "Liczba wierszy, w ktorych drugie slowo zawiera sie w pierwszym: " + to_string(answer);
+    return "5 b) Liczba wierszy, w ktorych drugie slowo zawiera sie w pierwszym: " + to_string(answer);
 }

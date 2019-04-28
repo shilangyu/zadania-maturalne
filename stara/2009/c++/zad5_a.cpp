@@ -87,5 +87,5 @@ string zad5_a()
         }
     }
 
-    return "Liczba palindromow w pliku: " + to_string(howManyPali);
+    return "5 a) Liczba palindromow w pliku: " + to_string(howManyPali);
 }
