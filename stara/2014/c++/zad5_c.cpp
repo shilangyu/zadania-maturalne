@@ -27,19 +27,19 @@ string zad5_c()
     {
         int howMany = 0;
 
-        //przechodzenie drugi raz po contencie, żeby sprawdzić czy powtarza się drugi raz ten sam napis
+        //przechodzenie drugi raz po contencie, zeby sprawdzic czy powtarza sie drugi raz ten sam napis
         for (int j = 0; j < content.size(); j++)
         {
             bool go = true;
 
-            //sprawdzanie czy aktualne słowo było już wcześniej dodane do vectora z  odpowiedziami
+            //sprawdzanie czy aktualne slowo bylo juz wczesniej dodane do vectora z odpowiedziami
             for (int k = 0; k < goodOnes.size(); k++)
             {
                 if (goodOnes[k] == content[i])
                     go = false;
             }
 
-            //jeżeli nie było, to dodajemy do vectora goodOnes
+            //jezeli nie bylo, to dodajemy do vectora goodOnes
             if (go)
             {
                 if (content[i] == content[j])

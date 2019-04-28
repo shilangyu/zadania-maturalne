@@ -5,7 +5,7 @@
 #include <fstream>
 using namespace std;
 
-//funkcja rozdzielająca wektor
+//funkcja rozdzielajaca wektor
 vector<vector<string>> splitVector2(vector<string> input)
 {
     vector<string> first;
@@ -49,7 +49,7 @@ vector<vector<string>> splitVector2(vector<string> input)
     return output;
 }
 
-//funkcja sprawdzająca czy dwa słowa są anagramami
+//funkcja sprawdzajaca czy dwa slowa sa anagramami
 bool isAnagram(string first, string second)
 {
     vector<char> secondWord;
@@ -107,7 +107,7 @@ string zad6_3()
     }
     file.close();
 
-    //tworzenie dwóch wektorów zawierających oddzielnie pierwsze i drugie słowa z linii
+    //tworzenie dwoch vectorow zawierajacych oddzielnie pierwsze i drugie slowa z linii
     vector<string> firstWords = splitVector2(content)[0];
     vector<string> secondWords = splitVector2(content)[1];
 

@@ -47,7 +47,7 @@ bool isAnagram(string first, string second)
     return true;
 }
 
-// funkcja zwracająca vector z odseparowanymi słowami
+// funkcja zwracajaca vector z odseparowanymi slowami
 vector<string> split1(string words)
 {
     vector<string> output;
@@ -69,7 +69,7 @@ vector<string> split1(string words)
     return output;
 }
 
-// funkcja sprawdzająca czy wszystkie słowa z wiersza są anagramami
+// funkcja sprawdzajaca czy wszystkie slowa z wiersza sa anagramami
 bool isSetAnagram(vector<string> words)
 {
     for (int i = 1; i < words.size(); i++)

@@ -3,9 +3,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <cmath>
 using namespace std;
 
-//funkcja sprawdzająca czy dany string spełnia warunki podane w zadaniu
+//funkcja sprawdzajaca czy dany string spelnia warunki podane w zadaniu
 bool isNotShrinking(string number)
 {
     for (int i = 1; i < number.size(); i++)
@@ -17,7 +18,7 @@ bool isNotShrinking(string number)
     return true;
 }
 
-//funkcja zmieniająca zapis ósemkowy na binarny
+//funkcja zmieniajaca zapis osemkowy na binarny
 string octalToBinary1(string line)
 {
     string result = "";
@@ -76,14 +77,14 @@ string zad6_c()
 
     vector<string> goodOnes;
 
-    //dodawanie elementów, które spełniają warunki zadania do vectora goodOnes
+    //dodawanie elementow, ktore spelniaja warunki zadania do vectora goodOnes
     for (int i = 0; i < content.size(); i++)
     {
         if (isNotShrinking(content[i]))
             goodOnes.push_back(content[i]);
     }
 
-    //sprawdzanie min i max i zapisywanie dwóch wersji tej samej liczby (w systemie ósemkowym i dziesiętnym)
+    //sprawdzanie min i max i zapisywanie dwoch wersji tej samej liczby (w systemie osemkowym i dziesietnym)
     int max = 0, min = 10000;
     string minNumberDecimal, maxNumberDecimal, minNumberOctal, maxNumberOctal;
 

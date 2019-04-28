@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-//funkcja zmieniająca zapis ósemkowy na binarny
+//funkcja zmieniajaca zapis osemkowy na binarny
 string octalToBinary(string line)
 {
     string result = "";
@@ -65,8 +65,8 @@ string zad6_b()
 
     int howMany = 0;
 
-    //przechodzenie po zawartości pliku i sprawdzanie czy dany element w zapisie dziesiętny
-    //spełnia warunki podane w poleceniu
+    //przechodzenie po zawartosci pliku i sprawdzanie czy dany element w zapisie dziesietnym
+    //spelnia warunki podane w poleceniu
     for (int i = 0; i < content.size(); i++)
     {
         string decimalElement = binaryToDecimal(octalToBinary(content[i]));

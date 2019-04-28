@@ -40,7 +40,7 @@ string zad5_a()
     vector<string> wordsA;
     vector<string> wordsB;
 
-    // rozdzielanie zawartości vectora na dwa oddzielne vectory
+    // rozdzielanie zawartosci vectora na dwa oddzielne vectory
     for (int i = 0; i < content.size(); i++)
     {
         string readyToPush = "";

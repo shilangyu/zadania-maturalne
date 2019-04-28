@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-//funkcja sprawdzająca czy jeden string zawiera się w drugim
+//funkcja sprawdzajaca czy jeden string zawiera sie w drugim
 bool isIn1(string container, string element)
 {
     for (int i = 0; i < container.size(); i++)
@@ -104,7 +104,7 @@ string zad5_c()
     vector<string> wordsA;
     vector<string> wordsB;
 
-    // rozdzielanie zawartości vectora na dwa oddzielne vectory
+    // rozdzielanie zawartosci vectora na dwa oddzielne vectory
     for (int i = 0; i < content.size(); i++)
     {
         string readyToPush = "";

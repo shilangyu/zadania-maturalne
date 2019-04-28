@@ -20,7 +20,7 @@ string zad4_1()
     }
     file.close();
 
-    //liczenie linii, które mają więcej zer niż jedynek
+    //liczenie linii, ktore maja wiecej zer niz jedynek
     int howManyLines = 0, zeros = 0, ones = 0;
 
     for (int i = 0; i < content.size(); i++)

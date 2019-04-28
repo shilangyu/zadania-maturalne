@@ -37,7 +37,7 @@ string zad4_a()
     vector<string> words;
     vector<string> keys;
 
-    // wczytywanie danych z plików
+    // wczytywanie danych z plikow
     fstream wordsRead("../dane/tj.txt");
     fstream keysRead("../dane/klucze1.txt");
 

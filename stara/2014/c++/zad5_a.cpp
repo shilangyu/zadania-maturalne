@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-//funkcja sprawdzająca czy dana liczba jest liczbą pierwszą
+//funkcja sprawdzajaca czy dana liczba jest liczba pierwsza
 bool isPrime(int number)
 {
     int counter = 0;
@@ -39,18 +39,18 @@ string zad5_a()
 
     int howMany = 0;
 
-    //przechodzenie po vectorze z zawartością pliku
+    //przechodzenie po vectorze z zawartoscia pliku
     for (int i = 0; i < content.size(); i++)
     {
         int lineNumber = 0;
 
         for (int j = 0; j < content[i].size(); j++)
         {
-            //dodawanie do zmiennej wartośći ASCII danego znaku
+            //dodawanie do zmiennej wartosci ASCII danego znaku
             lineNumber += int(content[i][j]);
         }
 
-        //wywoływanie funkcji sprawdzającej czy liczba jest liczbą pierwszą
+        //wywolywanie funkcji sprawdzajacej czy liczba jest liczba pierwsza
         if (isPrime(lineNumber))
             howMany++;
     }
