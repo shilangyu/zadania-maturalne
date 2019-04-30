@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-//funkcja sprawdzajaca czy jeden string zawiera sie w drugim
+// funkcja sprawdzajaca czy jeden string zawiera sie w drugim
 bool isIn(string container, string element)
 {
     for (int i = 0; i < container.size(); i++)
