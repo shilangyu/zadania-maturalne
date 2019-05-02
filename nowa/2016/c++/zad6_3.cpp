@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-//funkcja rozdzielająca vector z całą zawartością na dwa oddzielne vectory z początkowymi wyrazami i zaszyfrowanymi
+//funkcja rozdzielajaca vector z cala zawartoscia na dwa oddzielne vectory z poczatkowymi wyrazami i zaszyfrowanymi
 vector<vector<string>> splitVector(vector<string> input)
 {
     vector<string> rawData;
@@ -49,7 +49,7 @@ vector<vector<string>> splitVector(vector<string> input)
     return output;
 }
 
-//funkcja znajdująca przesunięcie
+//funkcja znajdujaca przesuniecie
 int findCode(char raw, char encoded)
 {
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -65,7 +65,7 @@ int findCode(char raw, char encoded)
         }
     }
 
-    //sprawdzanie odległości pierwszego znaku od drugiego
+    //sprawdzanie odleglosci pierwszego znaku od drugiego
     for (int i = rawNumber + 1; i < alphabet.size(); i++)
     {
         if (alphabet[i] == encoded)
@@ -92,14 +92,14 @@ string zad6_3()
             content.push_back(line);
     }
 
-    //wywoływanie funkcji splitVector
+    //wywolywanie funkcji splitVector
     vector<string> raw = splitVector(content)[0];
     vector<string> encoded = splitVector(content)[1];
     vector<string> answer;
 
     string manuallyEncoded = "";
 
-    //sprawdzanie, które wyrazy zostały błędnie zaszyfrowane
+    //sprawdzanie, ktore wyrazy zostaly blednie zaszyfrowane
     for (int i = 0; i < raw.size(); i++)
     {
         int code = findCode(raw[i][0], encoded[i][0]);

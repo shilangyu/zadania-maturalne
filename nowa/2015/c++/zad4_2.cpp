@@ -21,8 +21,8 @@ string zad4_2()
     file.close();
 
     //sprawdzanie czy liczba zapisana w binarce jest podzielna przez dwa lub osiem
-    //1. Liczba binarna jest podzielna przez dwa, jeśli na końcu znajduje się '0'
-    //2. Liczba binarna jest podzielna przez osiem, jeśli trzy ostatnie znaki są zerami
+    //1. Liczba binarna jest podzielna przez dwa, jesli na koncu znajduje sie '0'
+    //2. Liczba binarna jest podzielna przez osiem, jesli trzy ostatnie znaki sa zerami
     int dividedByTwo = 0, dividedByEight = 0;
 
     for (int i = 0; i < content.size(); i++)

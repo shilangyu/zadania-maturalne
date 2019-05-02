@@ -32,7 +32,7 @@ string zad6_4()
 
 	string verticalLines[320];
 
-	//przechodzenie po dwuwymiarowej tablicy po kolumnach i dodawanie poszczególnych elementów do tablicy verticalLines
+	//przechodzenie po dwuwymiarowej tablicy po kolumnach i dodawanie poszczegolnych elementow do tablicy verticalLines
 	for (int width = 0; width < 320; width++)
 	{
 		for (int height = 0; height < 200; height++)
@@ -43,7 +43,7 @@ string zad6_4()
 
 	int maxLength = 0, currentLength = 0;
 
-	//przechodzenie po tablicy verticalLines i zliczanie ile maksymalnie takich samych elementów następuje po sobie
+	//przechodzenie po tablicy verticalLines i zliczanie ile maksymalnie takich samych elementow nastepuje po sobie
 	for (int i = 0; i < 320; i++)
 	{
 		string current = verticalLines[i];

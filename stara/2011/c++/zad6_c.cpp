@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-// funkcja zamieniająca liczbę zapisaną w systemie binarnym na zapis dziesiętny
+// funkcja zamieniajaca liczbe zapisana w systemie binarnym na zapis dziesietny
 string binaryToDecimal1(string line)
 {
     int output = 0;
@@ -20,7 +20,7 @@ string binaryToDecimal1(string line)
     return to_string(output);
 }
 
-// funkcja zmieniająca liczbę w zapisie dziesiętnym na zapis dwójkowy
+// funkcja zmieniajaca liczbe w zapisie dziesietnym na zapis dwojkowy
 string decimalToBinary(int number)
 {
     string binaryReverse = "", output = "";
@@ -56,7 +56,7 @@ string zad6_c()
     vector<string> nines;
     vector<string> ninesDecimal;
 
-    // przechodzenie po vectorze content i dodawanie do vectorów te elementy, które mają długość równą 9
+    // przechodzenie po vectorze content i dodawanie do vectorow te elementy, ktore maja dlugosc rowna 9
     for (int i = 0; i < content.size(); i++)
     {
         if (content[i].size() == 9)
@@ -68,11 +68,11 @@ string zad6_c()
 
     int sum = 0;
 
-    // dodawanie kolejnych elementów do sumy
+    // dodawanie kolejnych elementow do sumy
     for (int i = 0; i < ninesDecimal.size(); i++)
         sum += atoi(ninesDecimal[i].c_str());
 
-    // wywoływanie funkcji, która zamieni wynik w systemie dziesiętnym na zapis w binarnym
+    // wywolywanie funkcji, ktora zamieni wynik w systemie dziesietnym na zapis w binarnym
     string sumBinary = decimalToBinary(sum);
 
     return "6 c) Liczba dziewieciocyfrowych: " + to_string(nines.size()) + "; Suma liczb (w systemie dwojkowym) skladajacych sie tylko z 9 liczb: " + sumBinary;

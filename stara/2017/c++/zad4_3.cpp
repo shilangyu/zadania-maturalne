@@ -3,9 +3,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <cmath>
 using namespace std;
 
-//funkcja zwracająca wartość w systemie dziesiętnym danego zapisu binarnego
+//funkcja zwracajaca wartosc w systemie dziesietnym danego zapisu binarnego
 int toDecimal2(string line)
 {
     int output = 0;
@@ -34,7 +35,7 @@ string zad4_3()
     }
     file.close();
 
-    //"filtrowanie" vectora z zawartością, sprawdzanie czy dany element w zapisie dziesiętnym wynosi więcej niż 65 535
+    //"filtrowanie" vectora z zawartoscia, sprawdzanie czy dany element w zapisie dziesietnym wynosi wiecej niż 65 535
     //i zapisywanie poprawnych danych do kolejnego vectora
     vector<string> goodOnes;
 
@@ -44,7 +45,7 @@ string zad4_3()
             goodOnes.push_back(content[i]);
     }
 
-    //szukanie maksymalnej wartości spośród tych "przefiltrowanych" elementów oraz samego tego elementu
+    //szukanie maksymalnej wartosci sposrod tych "przefiltrowanych" elementow oraz samego tego elementu
     int maxValue = 0;
     string chosenOne;
 

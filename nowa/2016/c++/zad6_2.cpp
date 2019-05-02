@@ -7,7 +7,7 @@ using namespace std;
 
 string zad6_2()
 {
-    //używam odwróconego alfabetu, by użyć tej samej metody do odszyfrowania, co do szyfrowania
+    //uzywam odwroconego alfabetu, by uzyc tej samej metody do odszyfrowania, co do szyfrowania
     string line, alphabet = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
     vector<string> content;
 
@@ -20,7 +20,7 @@ string zad6_2()
     }
     file.close();
 
-    //odszyfrowywanie wyrazów
+    //odszyfrowywanie wyrazow
     vector<string> decoded;
 
     for (int i = 0; i < content.size(); i++)
@@ -49,7 +49,7 @@ string zad6_2()
         int k = atoi(currentCode.c_str());
         string temporaryAlphabet = alphabet;
 
-        //powiększanie alfabetu, którego będziemy używać o odpowiednią ilość razy w zależności od liczby "k"
+        //powiekszanie alfabetu, ktorego bedziemy uzywac o odpowiednia ilosc razy w zalezności od liczby "k"
         for (int j = 0; j < (k / alphabet.size() + 1); j++)
         {
             temporaryAlphabet += alphabet;
@@ -74,7 +74,7 @@ string zad6_2()
         readyToPush = "";
     }
 
-    //wypełnianie stringa, który ma całą zawartość vectora decoded
+    //wypelnianie stringa, ktory ma cala zawartosc vectora decoded
     string decodedString = "\n";
 
     for (int i = 0; i < decoded.size(); i++)

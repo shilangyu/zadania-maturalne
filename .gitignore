@@ -1,5 +1,6 @@
 # c++
 *.exe
+*.out
 .vscode/
 **/c++/wyniki.txt
 # python

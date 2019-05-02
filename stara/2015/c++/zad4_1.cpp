@@ -20,8 +20,8 @@ string zad4_1()
     }
     file.close();
 
-    //przechodzenie po zawartości pliku, zliczanie zer i jedynek poszczególnych elementów
-    //i zliczanie ile jest elementów, które mają więcej zer niż jedynek
+    //przechodzenie po zawartosci pliku, zliczanie zer i jedynek poszczegolnych elementow
+    //i zliczanie ile jest elementow, ktore maja wiecej zer niz jedynek
     int howMany = 0;
 
     for (int i = 0; i < content.size(); i++)

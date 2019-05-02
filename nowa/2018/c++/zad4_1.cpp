@@ -21,10 +21,10 @@ string zad4_1()
 
     string answer = "";
 
-    //przechodzenie po zawartości pliku
+    //przechodzenie po zawartosci pliku
     for (int i = 0; i < content.size(); i++)
     {
-        //sprawdzanie czy znajdujemy się w linii o numerze podzielnym przez 40
+        //sprawdzanie czy znajdujemy sie w linii o numerze podzielnym przez 40
         if ((i + 1) % 40 == 0)
             answer += content[i][9];
     }

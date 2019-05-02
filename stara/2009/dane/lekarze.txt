@@ -10,7 +10,7 @@ Id_lekarza	Nazwisko	Imie	Specjalnosc	Data_urodzenia	NIP	PESEL
 34	Nowak	Anna	nefrolog	1970-04-12	877-222-34-56	70041245678
 36	Dybowski	Daniel	ortopeda	1954-02-18	556-877-90-67	54021833455
 38	Boniecki	Pawel	alergolog	1950-05-09	566-978-87-01	50050956677
-39	Celmer	Rados³aw	dermatolog	1946-08-23	657-879-65-88	46082399875
+39	Celmer	Radosï¿½aw	dermatolog	1946-08-23	657-879-65-88	46082399875
 41	Czapiewski	Jakub	laryngolog	1967-08-09	234-986-99-44	67080997756
 42	Dybowski	Michal	nefrolog	1966-05-29	456-787-56-91	66052988755
 45	Jackowska	Agnieszka	chirurg	1970-11-05	876-456-98-12	70110565723

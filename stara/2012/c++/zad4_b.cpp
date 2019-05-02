@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-// funkcja deszyfrująca stringa
+// funkcja deszyfrujaca stringa
 string decode(string word, string key)
 {
     string output = "";
@@ -37,7 +37,7 @@ string zad4_b()
     vector<string> words;
     vector<string> keys;
 
-    // wczytywanie danych z plików
+    // wczytywanie danych z plikow
     fstream wordsRead("../dane/sz.txt");
     fstream keysRead("../dane/klucze2.txt");
 

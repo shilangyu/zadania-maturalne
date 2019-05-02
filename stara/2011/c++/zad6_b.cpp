@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-// funkcja zamieniająca liczbę zapisaną w systemie binarnym na zapis dziesiętny
+// funkcja zamieniajaca liczbe zapisana w systemie binarnym na zapis dziesietny
 string binaryToDecimal(string line)
 {
     int output = 0;

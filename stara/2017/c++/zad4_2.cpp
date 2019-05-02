@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-//funkcja zwracająca wartość w systemie dziesiętnym danego zapisu binarnego
+//funkcja zwracajaca wartosc w systemie dziesietnym danego zapisu binarnego
 int toDecimal1(string line)
 {
     int output = 0;
@@ -20,10 +20,10 @@ int toDecimal1(string line)
     return output;
 }
 
-//funkcja sprawdzająca czy string jest poprawnie zapisany
+//funkcja sprawdzajaca czy string jest poprawnie zapisany
 bool isCorrect(string line)
 {
-    //sprawdzanie czy napis składa się z cztero-znakowych elementów
+    //sprawdzanie czy napis sklada sie z cztero-znakowych elementow
     if (line.size() % 4 == 0)
     {
         string readyToCheck = "";
@@ -35,7 +35,7 @@ bool isCorrect(string line)
             {
                 readyToCheck += line[i];
 
-                //sprawdzanie czy wartość nie przekracza 9
+                //sprawdzanie czy wartosc nie przekracza 9
                 if (toDecimal1(readyToCheck) > 9)
                     return false;
 
@@ -66,7 +66,7 @@ string zad4_2()
     }
     file.close();
 
-    //sprawdzanie ile jest niepoprawnie zapisanych napisów oraz wczytywanie do osobnego vectora
+    //sprawdzanie ile jest niepoprawnie zapisanych napisow oraz wczytywanie do osobnego vectora
     int howManyFalse = 0;
     vector<string> falseNumbers;
 
@@ -79,7 +79,7 @@ string zad4_2()
         }
     }
 
-    //sprawdzanie ile wynosi najkrótszy napis spośród niepoprawnych
+    //sprawdzanie ile wynosi najkrotszy napis sposrod niepoprawnych
     int minLength = 10000;
 
     for (int i = 0; i < falseNumbers.size(); i++)
