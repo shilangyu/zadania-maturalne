@@ -86,14 +86,12 @@ bool areBordersSame1(string a, string b)
     return false;
 }
 
-// funkcja konstruujaca slowo C, uzywajac drugiej metody podanej w zadaniu
-string secondMethodConstruct(string a, string b)
+string secondMethodConstructLeft(string a, string b)
 {
     string checkA = "", checkB = "", checkBReversed = "", c = "";
     bool isPossible = false;
 
-    // sprawdzanie od lewej strony pierwszego napisu
-    for (int i = b.size() - 1; i >= 0; i--)
+        for (int i = b.size() - 1; i >= 0; i--)
     {
         checkBReversed += b[i];
     }
@@ -129,9 +127,21 @@ string secondMethodConstruct(string a, string b)
         }
     }
 
-    checkA = "", checkB = "", checkBReversed = "";
+    if (isPossible)
+    {
+        return c;
+    }
+    else 
+    {
+        return "NONE";
+    }
+}
 
-    // sprawdzanie od prawej strony pierwszego napisu
+string secondMethodConstructRight(string a, string b)
+{
+    string checkA = "", checkB = "", checkBReversed = "", c = "";
+    bool isPossible = false;
+
     for (int i = a.size() - 1; i >= 0; i--)
     {
         checkA += a[i], checkB = "";
@@ -182,7 +192,27 @@ string createC(string a, string b)
     }
     else if (areBordersSame1(a, b))
     {
-        return secondMethodConstruct(a, b);
+        string leftC = secondMethodConstructLeft(a, b), rightC = secondMethodConstructRight(a, b);
+
+        if (leftC == "NONE")
+        {
+            return rightC;
+        }
+        else if (rightC == "NONE")
+        {
+            return leftC;
+        }
+        else
+        {
+            if (leftC.size() <= rightC.size())
+            {
+                return leftC;
+            }
+            else
+            {
+                return rightC;
+            }
+        }
     }
     else
     {
