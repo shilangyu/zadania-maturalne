@@ -12,7 +12,7 @@ string zad4_3()
 
     fstream file("../dane/liczby.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -20,7 +20,7 @@ string zad4_3()
     }
     file.close();
 
-    //znajdowanie maksymalnej dlugosci liczby
+    // znajdowanie maksymalnej dlugosci liczby
     int maxLength = 0;
 
     for (int i = 0; i < content.size(); i++)
@@ -29,7 +29,7 @@ string zad4_3()
             maxLength = content[i].size();
     }
 
-    //wyodrebnianie wszystkich najdluzszych liczb
+    // wyodrebnianie wszystkich najdluzszych liczb
     vector<string> theLongests;
 
     for (int i = 0; i < content.size(); i++)
@@ -38,7 +38,7 @@ string zad4_3()
             theLongests.push_back(content[i]);
     }
 
-    //znajdowanie najdluzszej serii jedynek z przodu
+    // znajdowanie najdluzszej serii jedynek z przodu
     int maxOnesInRow = 0, currentMaxOnesInRow = 0;
 
     for (int i = 0; i < theLongests.size(); i++)
@@ -57,7 +57,7 @@ string zad4_3()
         currentMaxOnesInRow = 0;
     }
 
-    //znajdowanie tych liczb, ktore spelniaja warunek najwiekszej dlugosci i najdluzszej serii jedynek z przodu
+    // znajdowanie tych liczb, ktore spelniaja warunek najwiekszej dlugosci i najdluzszej serii jedynek z przodu
     vector<string> theLongestOnes;
 
     for (int i = 0; i < theLongests.size(); i++)
@@ -76,10 +76,10 @@ string zad4_3()
         currentMaxOnesInRow = 0;
     }
 
-    //okazalo sie, ze istnieje tylko jedna taka liczba
+    // okazalo sie, ze istnieje tylko jedna taka liczba
     string theLongestOne = theLongestOnes[0];
 
-    //znajdowanie numeru wiersza zawierajacego najwieksza liczbe
+    // znajdowanie numeru wiersza zawierajacego najwieksza liczbe
     int biggestNumber;
 
     for (int i = 0; i < content.size(); i++)
@@ -93,7 +93,7 @@ string zad4_3()
 
     //-------------------------------------------------------------------------------
 
-    //znajdowanie minimalnej dlugosci liczby
+    // znajdowanie minimalnej dlugosci liczby
     int minLength = 10000;
 
     for (int i = 0; i < content.size(); i++)
@@ -102,7 +102,7 @@ string zad4_3()
             minLength = content[i].size();
     }
 
-    //znajdowanie liczb o najmniejszej dlugosci
+    // znajdowanie liczb o najmniejszej dlugosci
     vector<string> theSmallest;
 
     for (int i = 0; i < content.size(); i++)
@@ -112,7 +112,7 @@ string zad4_3()
     }
 
     // okazalo sie, ze zostalo 5 liczb, z ktorych mozemy wywnioskowac, ze liczba 100 jest najmniejsza
-    //znajdowanie numeru wiersza zawierajacego najmniejsza liczbe
+    // znajdowanie numeru wiersza zawierajacego najmniejsza liczbe
     int smallestNumber;
 
     for (int i = 0; i < content.size(); i++)

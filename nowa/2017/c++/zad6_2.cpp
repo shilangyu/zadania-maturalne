@@ -24,7 +24,7 @@ string zad6_2()
 	vector<string> currentLine;
 	int howManyAsyncLines = 0;
 
-	//odczytywanie z pliku przechodzac po poszczegolnych elementach
+// odczytywanie z pliku przechodzac po poszczegolnych elementach
 	if (file.is_open())
 	{
 		while (getline(file, line))

@@ -12,7 +12,7 @@ string zad4_1()
 
     fstream file("../dane/liczby.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -20,7 +20,7 @@ string zad4_1()
     }
     file.close();
 
-    //liczenie linii, ktore maja wiecej zer niz jedynek
+    // liczenie linii, ktore maja wiecej zer niz jedynek
     int howManyLines = 0, zeros = 0, ones = 0;
 
     for (int i = 0; i < content.size(); i++)

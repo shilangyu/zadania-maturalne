@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-//funkcja sprawdzajaca czy dany string spelnia warunki podane w zadaniu
+// funkcja sprawdzajaca czy dany string spelnia warunki podane w zadaniu
 bool isNotShrinking(string number)
 {
     for (int i = 1; i < number.size(); i++)
@@ -18,7 +18,7 @@ bool isNotShrinking(string number)
     return true;
 }
 
-//funkcja zmieniajaca zapis osemkowy na binarny
+// funkcja zmieniajaca zapis osemkowy na binarny
 string octalToBinary1(string line)
 {
     string result = "";
@@ -46,7 +46,7 @@ string octalToBinary1(string line)
     return result;
 }
 
-//funkcja zmieniajaca zapis binarny na dziesietny
+// funkcja zmieniajaca zapis binarny na dziesietny
 string binaryToDecimal1(string line)
 {
     int output = 0;
@@ -67,7 +67,7 @@ string zad6_c()
 
     fstream file("../dane/dane.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -77,14 +77,14 @@ string zad6_c()
 
     vector<string> goodOnes;
 
-    //dodawanie elementow, ktore spelniaja warunki zadania do vectora goodOnes
+    // dodawanie elementow, ktore spelniaja warunki zadania do vectora goodOnes
     for (int i = 0; i < content.size(); i++)
     {
         if (isNotShrinking(content[i]))
             goodOnes.push_back(content[i]);
     }
 
-    //sprawdzanie min i max i zapisywanie dwoch wersji tej samej liczby (w systemie osemkowym i dziesietnym)
+    // sprawdzanie min i max i zapisywanie dwoch wersji tej samej liczby (w systemie osemkowym i dziesietnym)
     int max = 0, min = 10000;
     string minNumberDecimal, maxNumberDecimal, minNumberOctal, maxNumberOctal;
 

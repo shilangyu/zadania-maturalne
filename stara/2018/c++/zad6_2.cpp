@@ -5,7 +5,7 @@
 #include <fstream>
 using namespace std;
 
-//funkcja rozdzielajaca vector
+// funkcja rozdzielajaca vector
 vector<vector<string>> splitVector1(vector<string> input)
 {
     vector<string> first;
@@ -49,7 +49,7 @@ vector<vector<string>> splitVector1(vector<string> input)
     return output;
 }
 
-//funkcja sprawdzajaca czy jeden string zawiera sie w drugim
+// funkcja sprawdzajaca czy jeden string zawiera sie w drugim
 bool isIn(string contener, string element)
 {
     for (int i = 0; i < contener.size(); i++)
@@ -77,7 +77,7 @@ string zad6_2()
 
     fstream file("../dane/slowa.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -85,7 +85,7 @@ string zad6_2()
     }
     file.close();
 
-    //tworzenie dwoch vectorow zawierajacych oddzielnie pierwsze i drugie slowa z linii
+    // tworzenie dwoch vectorow zawierajacych oddzielnie pierwsze i drugie slowa z linii
     vector<string> firstWords = splitVector1(content)[0];
     vector<string> secondWords = splitVector1(content)[1];
 

@@ -22,7 +22,7 @@ string zad6_1()
 
     string temporaryAlphabet = alphabet;
 
-    //powiekszanie alfabetu, ktorego bedziemy uzywać o odpowiednią ilosc razy w zalezności od liczby "k"
+    // powiekszanie alfabetu, ktorego bedziemy uzywać o odpowiednią ilosc razy w zalezności od liczby "k"
     for (int i = 0; i < (k / alphabet.size() + 1); i++)
     {
         temporaryAlphabet += alphabet;
@@ -31,7 +31,7 @@ string zad6_1()
     vector<string> encoded;
     string readyToPush = "";
 
-    //szyfrowanie wyrazow
+    // szyfrowanie wyrazow
     for (int i = 0; i < content.size(); i++)
     {
         for (int j = 0; j < content[i].size(); j++)
@@ -51,7 +51,7 @@ string zad6_1()
         readyToPush = "";
     }
 
-    //wypelnianie stringa, ktory ma cala zawartosc vectora encoded
+    // wypelnianie stringa, ktory ma cala zawartosc vectora encoded
     string encodedString = "\n";
 
     for (int i = 0; i < encoded.size(); i++)

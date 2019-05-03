@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-//funkcja sprawdzajaca czy napis jest rosnacy
+// funkcja sprawdzajaca czy napis jest rosnacy
 bool isGrowing(string line)
 {
     int previous = int(line[0]);
@@ -26,7 +26,7 @@ string zad5_b()
     string line;
     vector<string> content;
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     fstream file("../dane/NAPIS.TXT");
 
     if (file.is_open())
@@ -36,7 +36,7 @@ string zad5_b()
     }
     file.close();
 
-    //dodawanie tych elementow do vectora growing, ktore sa rosnace
+    // dodawanie tych elementow do vectora growing, ktore sa rosnace
     vector<string> growing;
 
     for (int i = 0; i < content.size(); i++)
@@ -45,7 +45,7 @@ string zad5_b()
             growing.push_back(content[i]);
     }
 
-    //dodawanie elementow z vectora growing do stringa answer
+    // dodawanie elementow z vectora growing do stringa answer
     string answer = "\n";
 
     for (int i = 0; i < growing.size(); i++)

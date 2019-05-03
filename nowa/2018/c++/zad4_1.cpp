@@ -11,7 +11,7 @@ string zad4_1()
     vector<string> content;
     fstream file("../dane/sygnaly.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -21,10 +21,10 @@ string zad4_1()
 
     string answer = "";
 
-    //przechodzenie po zawartosci pliku
+    // przechodzenie po zawartosci pliku
     for (int i = 0; i < content.size(); i++)
     {
-        //sprawdzanie czy znajdujemy sie w linii o numerze podzielnym przez 40
+        // sprawdzanie czy znajdujemy sie w linii o numerze podzielnym przez 40
         if ((i + 1) % 40 == 0)
             answer += content[i][9];
     }
