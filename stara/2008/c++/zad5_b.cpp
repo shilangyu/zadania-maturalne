@@ -41,11 +41,11 @@ string encrypt(string word)
 {
     if (isPali(word))
     {
-        return word; 
+        return word;
     }
     else
     {
-        string current = "", w1; 
+        string current = "", w1;
 
         for (int i = 0; i < word.size() - 1; i++)
         {
@@ -78,7 +78,7 @@ string zad5_b()
     {
         while (getline(file, line))
         {
-            content.push_back(line);   
+            content.push_back(line);
         }
     }
     file.close();
@@ -90,7 +90,7 @@ string zad5_b()
         encrypted.push_back(encrypt(content[i]));
     }
 
-    string answer = " 5 b) Hasla:\n";
+    string answer = "5 b) Hasla:\n";
 
     int max = 0, min = 1000;
 
@@ -156,4 +156,4 @@ string zad5_b()
     answer += "3. Suma dlugosci wszystkich hasel: " + to_string(sum) + "\n";
 
     return answer;
-} 
+}
