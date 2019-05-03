@@ -90,7 +90,7 @@ string zad5_b()
         encrypted.push_back(encrypt(content[i]));
     }
 
-    string answer = "Hasla:\n";
+    string answer = " 5 b) Hasla:\n";
 
     int max = 0, min = 1000;
 
