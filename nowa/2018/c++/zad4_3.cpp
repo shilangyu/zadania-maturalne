@@ -12,7 +12,7 @@ string zad4_3()
 
     fstream file("../dane/sygnaly.txt");
 
-    //wczytywanie danych z pliku do vectora
+    // wczytywanie danych z pliku do vectora
     if (file.is_open())
     {
         while (getline(file, line))
@@ -20,8 +20,8 @@ string zad4_3()
     }
     file.close();
 
-    //przypisanie zmiennym numerów odpowiadających za pierwszą literę alfabetu w tablicy ASCII (65)
-    //oraz za ostatnią (90)
+    // przypisanie zmiennym numerów odpowiadających za pierwszą literę alfabetu w tablicy ASCII (65)
+    // oraz za ostatnią (90)
     int minAscii = 90;
     int maxAscii = 65;
     vector<char> word;

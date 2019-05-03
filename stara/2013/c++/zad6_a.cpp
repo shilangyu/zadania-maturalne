@@ -12,7 +12,7 @@ string zad6_a()
 
     fstream file("../dane/dane.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))

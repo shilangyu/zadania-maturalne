@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-//funkcja zwracajaca wartosc w systemie dziesietnym danego zapisu binarnego
+// funkcja zwracajaca wartosc w systemie dziesietnym danego zapisu binarnego
 int toDecimal2(string line)
 {
     int output = 0;
@@ -27,7 +27,7 @@ string zad4_3()
 
     fstream file("../dane/binarne.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -36,7 +36,7 @@ string zad4_3()
     file.close();
 
     //"filtrowanie" vectora z zawartoscia, sprawdzanie czy dany element w zapisie dziesietnym wynosi wiecej niż 65 535
-    //i zapisywanie poprawnych danych do kolejnego vectora
+    // i zapisywanie poprawnych danych do kolejnego vectora
     vector<string> goodOnes;
 
     for (int i = 0; i < content.size(); i++)
@@ -45,7 +45,7 @@ string zad4_3()
             goodOnes.push_back(content[i]);
     }
 
-    //szukanie maksymalnej wartosci sposrod tych "przefiltrowanych" elementow oraz samego tego elementu
+    // szukanie maksymalnej wartosci sposrod tych "przefiltrowanych" elementow oraz samego tego elementu
     int maxValue = 0;
     string chosenOne;
 

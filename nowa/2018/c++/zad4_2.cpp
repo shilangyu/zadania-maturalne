@@ -12,7 +12,7 @@ string zad4_2()
 
     fstream file("../dane/sygnaly.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -20,7 +20,7 @@ string zad4_2()
     }
     file.close();
 
-    //szukanie slowa zawierajacego najwiecej roznych znakow
+    // szukanie slowa zawierajacego najwiecej roznych znakow
     int globalMax = 0;
     int max = 0;
     int no = 0;
@@ -28,16 +28,16 @@ string zad4_2()
     vector<char> word;
     vector<char> banned;
 
-    //przechodzenie po zawartosci pliku
+    // przechodzenie po zawartosci pliku
     for (int i = 0; i < content.size(); i++)
     {
-        //przechodzenie po danej linii
+        // przechodzenie po danej linii
         for (int j = 0; j < content[i].size(); j++)
         {
             word.push_back(content[i][j]);
         }
 
-        //sprawdzanie czy dana litera sie nie powtorzyła
+        // sprawdzanie czy dana litera sie nie powtorzyła
         for (int j = 0; j < content[i].size(); j++)
         {
             for (int k = 0; k < banned.size(); k++)
@@ -46,7 +46,7 @@ string zad4_2()
                     no++;
             }
 
-            //dodawanie 1 do max, jezeli litera wczesniej sie nie powtorzyla i dodawanie tej litery do vectora banned
+            // dodawanie 1 do max, jezeli litera wczesniej sie nie powtorzyla i dodawanie tej litery do vectora banned
             if (no == 0)
             {
                 max++;
@@ -55,14 +55,14 @@ string zad4_2()
             no = 0;
         }
 
-        //sprawdzanie czy aktualne slowo ma wiecej roznych znakow niz dotychczasowe rekordowe slowo
+        // sprawdzanie czy aktualne slowo ma wiecej roznych znakow niz dotychczasowe rekordowe slowo
         if (max > globalMax)
         {
             globalMax = max;
             chosenOne = content[i];
         }
 
-        //czyszczenie tymczasowych danych do ponownego uzycia w nastepnym powtorzeniu petli
+        // czyszczenie tymczasowych danych do ponownego uzycia w nastepnym powtorzeniu petli
         max = 0;
         word.clear();
         banned.clear();

@@ -12,7 +12,7 @@ string zad4_2()
 
     fstream file("../dane/liczby.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -20,9 +20,9 @@ string zad4_2()
     }
     file.close();
 
-    //sprawdzanie czy liczba zapisana w binarce jest podzielna przez dwa lub osiem
-    //1. Liczba binarna jest podzielna przez dwa, jesli na koncu znajduje sie '0'
-    //2. Liczba binarna jest podzielna przez osiem, jesli trzy ostatnie znaki sa zerami
+    // sprawdzanie czy liczba zapisana w binarce jest podzielna przez dwa lub osiem
+    // 1. Liczba binarna jest podzielna przez dwa, jesli na koncu znajduje sie '0'
+    // 2. Liczba binarna jest podzielna przez osiem, jesli trzy ostatnie znaki sa zerami
     int dividedByTwo = 0, dividedByEight = 0;
 
     for (int i = 0; i < content.size(); i++)

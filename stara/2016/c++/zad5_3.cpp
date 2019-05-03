@@ -104,7 +104,7 @@ string zad5_3()
 
     fstream file("../dane/gra.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))

@@ -5,7 +5,7 @@
 #include <sstream>
 using namespace std;
 
-//funckja sprawdzajaca czy piksele kontrastuja ze soba zwracajaca bool
+// funckja sprawdzajaca czy piksele kontrastuja ze soba zwracajaca bool
 bool isContrasting(int first, int second)
 {
 	bool output = false;
@@ -45,7 +45,7 @@ string zad6_3()
 	}
 	file.close();
 
-	//3.
+	// 3.
 	int howManyContrastingPixels = 0, checker = 0;
 
 	for (int h = 0; h < 200; h++)
@@ -54,35 +54,35 @@ string zad6_3()
 		{
 			int primeValue = atoi(board[h][w].c_str());
 
-			//sprawdzanie czy istnieje piksel po lewej stronie
+			// sprawdzanie czy istnieje piksel po lewej stronie
 			if (w != 0)
 			{
 				if (isContrasting(primeValue, atoi(board[h][w - 1].c_str())))
 					checker++;
 			}
 
-			//sprawdzanie czy istnieje piksel po prawej stronie
+			// sprawdzanie czy istnieje piksel po prawej stronie
 			if (w != 319)
 			{
 				if (isContrasting(primeValue, atoi(board[h][w + 1].c_str())))
 					checker++;
 			}
 
-			//sprawdzanie czy istnieje piksel na gorze
+			// sprawdzanie czy istnieje piksel na gorze
 			if (h != 0)
 			{
 				if (isContrasting(primeValue, atoi(board[h - 1][w].c_str())))
 					checker++;
 			}
 
-			//sprawdzanie czy istnieje piksel na dole
+			// sprawdzanie czy istnieje piksel na dole
 			if (h != 199)
 			{
 				if (isContrasting(primeValue, atoi(board[h + 1][w].c_str())))
 					checker++;
 			}
 
-			//zwiększenie o jeden liczby kontrastującyh pikseli jezeli piksel, ktory sprawdzamy kontrastuje z conajmniej jednym pikselem obok
+			// zwiększenie o jeden liczby kontrastującyh pikseli jezeli piksel, ktory sprawdzamy kontrastuje z conajmniej jednym pikselem obok
 			if (checker > 0)
 				howManyContrastingPixels++;
 

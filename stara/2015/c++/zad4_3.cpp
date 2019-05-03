@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-//funkcja zwracajaca wartosc odpowiadajaca dlugosci najdluzszego bloku skladajacego sie z samych zer
+// funkcja zwracajaca wartosc odpowiadajaca dlugosci najdluzszego bloku skladajacego sie z samych zer
 int biggestZeroBlock(string line)
 {
     int currentZeros, maxZeros = 0;
@@ -41,7 +41,7 @@ string zad4_3()
 
     fstream file("../dane/slowa.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -52,14 +52,14 @@ string zad4_3()
     vector<string> biggest;
     int max = 0;
 
-    //przechodzenie po vectorze z zawartoscia i sprawdzanie jaki jest max wystepowania zer z rzedu
+    // przechodzenie po vectorze z zawartoscia i sprawdzanie jaki jest max wystepowania zer z rzedu
     for (int i = 0; i < content.size(); i++)
     {
         if (biggestZeroBlock(content[i]) > max)
             max = biggestZeroBlock(content[i]);
     }
 
-    //dodawanie elementow do oddzielnego vectora, ktore zawieraja blok o maksymalnej dlugości
+    // dodawanie elementow do oddzielnego vectora, ktore zawieraja blok o maksymalnej dlugości
     for (int i = 0; i < content.size(); i++)
     {
         if (biggestZeroBlock(content[i]) == max)

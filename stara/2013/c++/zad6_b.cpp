@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-//funkcja zmieniajaca zapis osemkowy na binarny
+// funkcja zmieniajaca zapis osemkowy na binarny
 string octalToBinary(string line)
 {
     string result = "";
@@ -34,7 +34,7 @@ string octalToBinary(string line)
     return result;
 }
 
-//funkcja zmieniajaca zapis binarny na dziesietny
+// funkcja zmieniajaca zapis binarny na dziesietny
 string binaryToDecimal(string line)
 {
     int output = 0;
@@ -55,7 +55,7 @@ string zad6_b()
 
     fstream file("../dane/dane.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -65,8 +65,8 @@ string zad6_b()
 
     int howMany = 0;
 
-    //przechodzenie po zawartosci pliku i sprawdzanie czy dany element w zapisie dziesietnym
-    //spelnia warunki podane w poleceniu
+    // przechodzenie po zawartosci pliku i sprawdzanie czy dany element w zapisie dziesietnym
+    // spelnia warunki podane w poleceniu
     for (int i = 0; i < content.size(); i++)
     {
         string decimalElement = binaryToDecimal(octalToBinary(content[i]));

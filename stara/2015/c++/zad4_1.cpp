@@ -12,7 +12,7 @@ string zad4_1()
 
     fstream file("../dane/slowa.txt");
 
-    //wczytywanie danych z pliku
+    // wczytywanie danych z pliku
     if (file.is_open())
     {
         while (getline(file, line))
@@ -20,8 +20,8 @@ string zad4_1()
     }
     file.close();
 
-    //przechodzenie po zawartosci pliku, zliczanie zer i jedynek poszczegolnych elementow
-    //i zliczanie ile jest elementow, ktore maja wiecej zer niz jedynek
+    // przechodzenie po zawartosci pliku, zliczanie zer i jedynek poszczegolnych elementow
+    // i zliczanie ile jest elementow, ktore maja wiecej zer niz jedynek
     int howMany = 0;
 
     for (int i = 0; i < content.size(); i++)
