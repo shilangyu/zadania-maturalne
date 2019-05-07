@@ -1,12 +1,19 @@
 # jezeli liczba jest podzielna przez liczby inne niz {1, n} to nie jest liczba pierwsza
 def isprime(n):
-    if n == 1:
+    if n <= 1:
         return False
-    for i in range(2, n//2 + 1):
-        if n % i == 0:
+    if n <= 3:
+        return True
+
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+
+    for i in range(5, n + 6, 6):
+        if i * i > n:
+            return True
+        if n % i == 0 or n % (i + 2) == 0:
             return False
 
-    return True
 
 
 # sumowanie cyfr
