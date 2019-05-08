@@ -129,6 +129,3 @@ string zad5_b()
     return "5 b) Liczba liczb w przedziale <100;10000>: " + to_string(howMany) + "\nSuma wszystkich liczb B z tego samego przedzialu " + 
     answer + " liczba B pierwsza";
 }
-
-
-
