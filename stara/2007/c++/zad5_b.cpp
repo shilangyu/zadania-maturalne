@@ -5,18 +5,35 @@ using namespace std;
 // funkcja sprawdzajaca czy dana liczba jest liczba pierwsza
 bool isPrime1(int number)
 {
-    int counter = 0;
-
-    for (int i = 1; i < number; i++)
+    if (number <= 1)
     {
-        if (number % i == 0)
-            counter++;
+        return false;
+    }
+    
+    if (number <= 3)
+    {
+        return true;
     }
 
-    if (counter == 1)
-        return true;
-    else
+    if (number % 2 == 0 or number % 3 == 0)
+    {
         return false;
+    }
+
+    for (int i = 5; i < number + 6; i += 6)
+    {
+        if (i * i > number)
+        {
+            break;
+        }
+
+        if (number % i == 0 or number % (i + 2) == 0)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 // funkcja zmieniajaca liczbe w zapisie dziesietnym na zapis dwojkowy
@@ -126,6 +143,6 @@ string zad5_b()
         answer += "nie jest";
     }
 
-    return "5 b) Liczba liczb w przedziale <100;10000>: " + to_string(howMany) + "\nSuma wszystkich liczb B z tego samego przedzialu " + 
+    return "5 b) Liczba liczb w przedziale <100;10000>: " + to_string(howMany) + "; Suma wszystkich liczb B z tego samego przedzialu " + 
     answer + " liczba B pierwsza";
 }
