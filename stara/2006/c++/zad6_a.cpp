@@ -51,6 +51,7 @@ string zad6_a()
     }
     file.close();
 
+    // sprawdzanie ile slow wystepuje wiecej niz jeden raz
     int howManyMoreThanOne = 0;
     vector<string> banned;
 
@@ -63,9 +64,11 @@ string zad6_a()
         }
     }
 
+    string answer = "6 a) Liczba slow wystepujacych w pliku wiecej niz jeden raz: " + to_string(howManyMoreThanOne);
+
     // sprawdzanie, ktore slowo wystepuje najwiecej razy w pliku
     int max = 0;
-    string currentMax = "h";
+    string currentMax;
 
     for (int i = 0; i < content.size(); i++)
     {
@@ -73,7 +76,6 @@ string zad6_a()
         
         for (int j = 0; j < content.size(); j++)
         {
-
             if (content[i] == content[j])
             {
                 temp++;
@@ -87,9 +89,5 @@ string zad6_a()
         }
     }
 
-    // cout << currentMax;
-
-    string answer = "6 a) Liczba slow wystepujacych w pliku wiecej niz jeden raz: " + to_string(howManyMoreThanOne);
-
-    return answer;
+    return answer += "; Slowo wystepujace najwiecej razy: " + currentMax + "; Liczba wystapien tego slowa: " + to_string(max);
 }
