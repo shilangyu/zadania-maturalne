@@ -7,83 +7,83 @@ using namespace std;
 
 string zad6_2()
 {
-    // uzywam odwroconego alfabetu, by uzyc tej samej metody do odszyfrowania, co do szyfrowania
-    string line, alphabet = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+    string line;
     vector<string> content;
 
+    // wczytywanie danych z pliku
     fstream file("../dane/dane_6_2.txt");
 
     if (file.is_open())
     {
         while (getline(file, line))
+        {
             content.push_back(line);
+        }
+        file.close();
     }
-    file.close();
 
-    // odszyfrowywanie wyrazow
-    vector<string> decoded;
+    // rozdzielanie vactora content na slowa i klucze
+    vector<string> encrypted;
+    vector<int> ks;
 
     for (int i = 0; i < content.size(); i++)
     {
-        string currentElement = "", currentCode = "";
-        bool switchToCode = false;
+        string tempWord = "", tempK = "";
+        bool space = false;
 
         for (int j = 0; j < content[i].size(); j++)
         {
-            if (switchToCode)
+            if (space)
             {
-                currentCode += content[i][j];
-
-                if (i == content[i].size() - 1)
-                    switchToCode = false;
+                tempK += content[i][j];
             }
-            else
+            else if (content[i][j] != ' ')
             {
-                if (content[i][j] != ' ')
-                    currentElement += content[i][j];
-                else
-                    switchToCode = true;
+                tempWord += content[i][j];
+            }
+
+            if (content[i][j] == ' ')
+            {
+                space = true;
             }
         }
 
-        int k = atoi(currentCode.c_str());
-        string temporaryAlphabet = alphabet;
-
-        // powiekszanie alfabetu, ktorego bedziemy uzywac o odpowiednia ilosc razy w zalezności od liczby "k"
-        for (int j = 0; j < (k / alphabet.size() + 1); j++)
-        {
-            temporaryAlphabet += alphabet;
-        }
-
-        string readyToPush = "";
-
-        for (int j = 0; j < currentElement.size(); j++)
-        {
-            int currentAlphabetPosition;
-
-            for (int l = 0; l < alphabet.size(); l++)
-            {
-                if (alphabet[l] == content[i][j])
-                    currentAlphabetPosition = l;
-            }
-
-            readyToPush += temporaryAlphabet[currentAlphabetPosition + k];
-        }
-
-        decoded.push_back(readyToPush);
-        readyToPush = "";
+        encrypted.push_back(tempWord);
+        ks.push_back(atoi(tempK.c_str()));
     }
 
-    // wypelnianie stringa, ktory ma cala zawartosc vectora decoded
-    string decodedString = "\n";
+    string decrypted = "6.2. Odszyfrowane wyrazy: \n";
 
-    for (int i = 0; i < decoded.size(); i++)
+    // przechodzenie po kazdej literze kazdego slowa
+    for (int i = 0; i < encrypted.size(); i++)
     {
-        if (i != decoded.size() - 1)
-            decodedString += decoded[i] + "\n";
+        string temp = "";
+
+        for (int j = 0; j < encrypted[i].size(); j++)
+        {
+            // numer ASCII znaku po cofnieciu go o "k"
+            int differenceASCII = encrypted[i][j] - ks[i];
+
+            // zapobieganie wychodzenia ponizej liczby 65
+            while (differenceASCII < 65)
+            {
+                differenceASCII += 26;
+            }
+
+            temp += differenceASCII;
+        }
+
+        if (i != content.size() - 1)
+        {
+            decrypted += temp + "\n";
+        }
         else
-            decodedString += decoded[i];
+        {
+            decrypted += temp;
+        }
+
+        temp = "";
     }
 
-    return "6.2. Odszyfrowane wyrazy: " + decodedString;
+    return decrypted;
 }
