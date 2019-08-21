@@ -7,10 +7,11 @@ using namespace std;
 
 string zad6_1()
 {
-    string line, alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string line;
     vector<string> content;
     int k = 107;
 
+    // wczytywanie danych z pliku
     fstream file("../dane/dane_6_1.txt");
 
     if (file.is_open())
@@ -20,47 +21,38 @@ string zad6_1()
     }
     file.close();
 
-    string temporaryAlphabet = alphabet;
+    string encrypted = "6.1. Zaszyfrowane wyrazy: \n";
 
-    // powiekszanie alfabetu, ktorego bedziemy uzywać o odpowiednią ilosc razy w zalezności od liczby "k"
-    for (int i = 0; i < (k / alphabet.size() + 1); i++)
-    {
-        temporaryAlphabet += alphabet;
-    }
-
-    vector<string> encoded;
-    string readyToPush = "";
-
-    // szyfrowanie wyrazow
+    // przechodzenie po kazdej literze kazdego slowa
     for (int i = 0; i < content.size(); i++)
     {
+        string temp = "";
+
         for (int j = 0; j < content[i].size(); j++)
         {
-            int currentAlphabetPosition;
+            // numer ASCII znaku po przesunieciu go o "k"
+            int sumASCII = content[i][j] + k;
 
-            for (int l = 0; l < alphabet.size(); l++)
+            // zapobieganie wychodzenia poza numer 90 w tablicy ASCII
+            while (sumASCII > 90)
             {
-                if (alphabet[l] == content[i][j])
-                    currentAlphabetPosition = l;
+                sumASCII -= 26;
             }
 
-            readyToPush += temporaryAlphabet[currentAlphabetPosition + k];
+            temp += sumASCII;
         }
 
-        encoded.push_back(readyToPush);
-        readyToPush = "";
-    }
-
-    // wypelnianie stringa, ktory ma cala zawartosc vectora encoded
-    string encodedString = "\n";
-
-    for (int i = 0; i < encoded.size(); i++)
-    {
-        if (i != encoded.size() - 1)
-            encodedString += encoded[i] + "\n";
+        if (i != content.size() - 1)
+        {
+            encrypted += temp + "\n";
+        }
         else
-            encodedString += encoded[i];
+        {
+            encrypted += temp;
+        }
+
+        temp = "";
     }
 
-    return "6.1. Zaszyfrowane wyrazy: " + encodedString;
+    return encrypted;
 }
