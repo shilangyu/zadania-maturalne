@@ -1,0 +1,22 @@
+def is_power_of(x, n):
+    """checks if `x` is the power of `n`"""
+    if x % n != 0:
+        return False
+    while x >= n:
+        if x == n:
+            return True
+        x /= n
+    return False
+
+
+data = [int(x[:-1]) for x in open('../dane/liczby.txt')]
+
+
+count = 0
+
+
+for x in data:
+    count += is_power_of(x, 3)
+
+
+answer = f'4.1. Ilosć liczb ktore sa potegami liczby 3: {count}'
