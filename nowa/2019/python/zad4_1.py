@@ -1,5 +1,7 @@
 def is_power_of(x, n):
     """checks if `x` is the power of `n`"""
+    if x == 1:
+        return True
     if x % n != 0:
         return False
     while x >= n:
