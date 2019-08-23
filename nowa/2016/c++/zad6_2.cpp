@@ -19,8 +19,8 @@ string zad6_2()
         {
             content.push_back(line);
         }
-        file.close();
     }
+    file.close();
 
     // rozdzielanie vactora content na slowa i klucze
     vector<string> encrypted;
