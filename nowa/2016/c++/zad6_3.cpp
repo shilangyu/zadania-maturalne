@@ -50,40 +50,22 @@ vector<vector<string>> splitVector(vector<string> input)
 }
 
 // funkcja znajdujaca przesuniecie
-int findCode(char raw, char encoded)
+int findKey(int decodedChar, int encodedChar)
 {
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    int code, rawNumber;
-
-    // sprawdzanie pozycji znaku w alfabecie
-    for (int i = 0; i < alphabet.size(); i++)
+    if (encodedChar >= decodedChar)
+        return encodedChar - decodedChar;
+    else
     {
-        if (alphabet[i] == raw)
-        {
-            rawNumber = i;
-            break;
-        }
+        return (90 - decodedChar) + (encodedChar - 64);
     }
-
-    // sprawdzanie odleglosci pierwszego znaku od drugiego
-    for (int i = rawNumber + 1; i < alphabet.size(); i++)
-    {
-        if (alphabet[i] == encoded)
-        {
-            code = i - rawNumber;
-            break;
-        }
-    }
-
-    return code;
 }
 
 string zad6_3()
 {
     string line;
     vector<string> content;
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+    // wczytywanie danych z pliku
     fstream file("../dane/dane_6_3.txt");
 
     if (file.is_open())
@@ -91,49 +73,29 @@ string zad6_3()
         while (getline(file, line))
             content.push_back(line);
     }
+    file.close();
 
-    // wywolywanie funkcji splitVector
-    vector<string> raw = splitVector(content)[0];
+    // wywolywanie funkcji splitView
+    vector<string> decoded = splitVector(content)[0];
     vector<string> encoded = splitVector(content)[1];
-    vector<string> answer;
 
-    string manuallyEncoded = "";
+    string answer = "6.3. Wyrazy blednie zaszyfrowane: \n";
 
-    // sprawdzanie, ktore wyrazy zostaly blednie zaszyfrowane
-    for (int i = 0; i < raw.size(); i++)
+    for (int i = 0; i < content.size(); i++)
     {
-        int code = findCode(raw[i][0], encoded[i][0]);
+        // znajdowanie przesuniecia pierwszego znaku w slowie
+        int k = findKey(decoded[i][0], encoded[i][0]);
 
-        for (int j = 0; j < raw[i].size(); j++)
+        for (int j = 1; j < decoded[i].size(); j++)
         {
-            int currentAlphabetPosition;
-
-            for (int k = 0; k < alphabet.size(); k++)
+            // sprawdzanie czy klucz zgadza sie w dalszej czesci slowa
+            if (findKey(decoded[i][j], encoded[i][j]) != k)
             {
-                if (alphabet[k] == raw[i][j])
-                {
-                    currentAlphabetPosition = k;
-                    break;
-                }
+                answer += decoded[i] + "\n";
+                break;
             }
-            manuallyEncoded += alphabet[currentAlphabetPosition + code];
         }
-
-        if (manuallyEncoded != encoded[i])
-            answer.push_back(raw[i]);
-
-        manuallyEncoded = "";
     }
 
-    string answerString = "\n";
-
-    for (int i = 0; i < answer.size(); i++)
-    {
-        if (i != answer.size() - 1)
-            answerString += answer[i] + "\n";
-        else
-            answerString += answer[i];
-    }
-
-    return "6.3. Wyrazy zaszyfrowane blednie: " + answerString;
+    return answer;
 }
