@@ -14,9 +14,7 @@ int sumOfFactorials(string number)
         int currentDigit = 1;
 
         for (int j = 1; j <= number[i] - '0'; j++)
-        {
             currentDigit *= j;
-        }
 
         sum += currentDigit;
     }
