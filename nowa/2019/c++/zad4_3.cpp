@@ -31,6 +31,29 @@ int biggestCommonDivisor(vector<int> divisors1, vector<int> divisors2)
     return 1;
 }
 
+// funkcja sprawdzajaca czy dany int wystepuje w kazdym vectorze
+bool isInAll(vector<vector<int>> collection, int number)
+{
+    for (int i = 0; i < collection.size(); i++)
+    {
+        bool inOne = false;
+
+        for (int j = 0; j < collection[i].size(); j++)
+        {
+            if (collection[i][j] == number)
+            {
+                inOne = true;
+                break;
+            }
+        }
+
+        if (inOne == false)
+            return false;
+    }
+
+    return true;
+}
+
 string zad4_3()
 {
     string line;
@@ -48,6 +71,7 @@ string zad4_3()
 
     vector<int> previousDivisors;
     vector<int> currentSeries;
+    vector<vector<int>> allDivisors;
     bool startAgain = false;
     int maxLength = 0;
     int parameters[3];
@@ -58,8 +82,13 @@ string zad4_3()
     {
         if (i == 0 or startAgain)
         {
+            // zmniejszam "i" o 1, poniewaz pierwszy element wlasciwego ciagu moze byc ostatnim elementem poprzedniego
+            if (startAgain)
+                i -= 1;
+
             previousDivisors = divisors(numbers[i]);
             currentSeries.push_back(numbers[i]);
+            allDivisors.push_back(previousDivisors);
             startAgain = false;
         }
         else
@@ -67,10 +96,20 @@ string zad4_3()
             vector<int> currentDivisors = divisors(numbers[i]);
 
             if (currentSeries.size() == 1)
+            {
                 biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors);
+            }
 
-            if (biggestCommonDivisor(previousDivisors, currentDivisors) == biggestDivisor and biggestDivisor != 1 and biggestDivisor != 0)
+            if (biggestDivisor != 0 and biggestDivisor != 1 and numbers[i] % biggestDivisor == 0)
+            {
                 currentSeries.push_back(numbers[i]);
+                allDivisors.push_back(currentDivisors);
+            }
+            else if (biggestDivisor != 0 and biggestDivisor != 1 and biggestCommonDivisor(previousDivisors, currentDivisors) != 1 and isInAll(allDivisors, biggestDivisor))
+            {
+                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors);
+                currentSeries.push_back(numbers[i]);
+            }
             else
             {
                 if (currentSeries.size() > maxLength and currentSeries.size() > 1)
