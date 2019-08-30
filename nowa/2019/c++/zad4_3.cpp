@@ -19,13 +19,23 @@ vector<int> divisors(int number)
 }
 
 // funkcja zwracajaca najwiekszy wspolny dzielnik
-int biggestCommonDivisor(vector<int> divisors1, vector<int> divisors2)
+int biggestCommonDivisor(vector<int> divisors1, vector<int> divisors2, int limit, bool isLimit)
 {
     for (int i = divisors1.size() - 1; i >= 0; i--)
     {
         for (int j = divisors2.size() - 1; j >= 0; j--)
-            if (divisors1[i] == divisors2[j])
-                return divisors1[i];
+        {
+            if (isLimit)
+            {
+                if (divisors1[i] == divisors2[j] and divisors1[i] < limit)
+                    return divisors1[i];
+            }
+            else
+            {
+                if (divisors1[i] == divisors2[j])
+                    return divisors1[i];
+            }
+        }
     }
 
     return 1;
@@ -60,7 +70,7 @@ string zad4_3()
     vector<int> numbers;
 
     // wczytywanie danych z pliku
-    fstream file("../dane/przyklad.txt");
+    fstream file("../dane/liczby.txt");
 
     if (file.is_open())
     {
@@ -96,18 +106,16 @@ string zad4_3()
             vector<int> currentDivisors = divisors(numbers[i]);
 
             if (currentSeries.size() == 1)
-            {
-                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors);
-            }
+                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors, 0, false);
 
             if (biggestDivisor != 0 and biggestDivisor != 1 and numbers[i] % biggestDivisor == 0)
             {
                 currentSeries.push_back(numbers[i]);
                 allDivisors.push_back(currentDivisors);
             }
-            else if (biggestDivisor != 0 and biggestDivisor != 1 and biggestCommonDivisor(previousDivisors, currentDivisors) != 1 and isInAll(allDivisors, biggestDivisor))
+            else if (biggestDivisor != 0 and biggestDivisor != 1 and biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true) != 1 and isInAll(allDivisors, biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true)))
             {
-                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors);
+                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true);
                 currentSeries.push_back(numbers[i]);
             }
             else
@@ -116,11 +124,12 @@ string zad4_3()
                 {
                     parameters[0] = currentSeries[0];
                     parameters[1] = currentSeries.size();
-                    parameters[2] = biggestCommonDivisor(divisors(currentSeries[0]), divisors(currentSeries[1]));
+                    parameters[2] = biggestDivisor;
                     maxLength = currentSeries.size();
                 }
 
                 currentSeries.clear();
+                allDivisors.clear();
                 startAgain = true;
             }
         }
