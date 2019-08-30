@@ -37,7 +37,7 @@ string zad4_3()
     vector<int> numbers;
 
     // wczytywanie danych z pliku
-    fstream file("../dane/liczby.txt");
+    fstream file("../dane/przyklad.txt");
 
     if (file.is_open())
     {
@@ -51,6 +51,7 @@ string zad4_3()
     bool startAgain = false;
     int maxLength = 0;
     int parameters[3];
+    int biggestDivisor = 0;
 
     // przechodzenie po kazdym elemencie
     for (int i = 0; i < numbers.size(); i++)
@@ -65,15 +66,19 @@ string zad4_3()
         {
             vector<int> currentDivisors = divisors(numbers[i]);
 
-            if (biggestCommonDivisor(previousDivisors, currentDivisors) != 1)
+            if (currentSeries.size() == 1)
+                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors);
+
+            if (biggestCommonDivisor(previousDivisors, currentDivisors) == biggestDivisor and biggestDivisor != 1 and biggestDivisor != 0)
                 currentSeries.push_back(numbers[i]);
             else
             {
-                if (currentSeries.size() > maxLength)
+                if (currentSeries.size() > maxLength and currentSeries.size() > 1)
                 {
                     parameters[0] = currentSeries[0];
                     parameters[1] = currentSeries.size();
                     parameters[2] = biggestCommonDivisor(divisors(currentSeries[0]), divisors(currentSeries[1]));
+                    maxLength = currentSeries.size();
                 }
 
                 currentSeries.clear();
