@@ -18,7 +18,7 @@ vector<int> divisors(int number)
     return divisors;
 }
 
-// funkcja zwracajaca najwiekszy wspolny dzielnik
+// funkcja zwracajaca najwiekszy wspolny dzielnik, pozwala ustalic wartosc limitu, najwiekszy wspolny dzielnik musi byc mniejszy niz limit
 int biggestCommonDivisor(vector<int> divisors1, vector<int> divisors2, int limit, bool isLimit)
 {
     for (int i = divisors1.size() - 1; i >= 0; i--)
@@ -84,8 +84,10 @@ string zad4_3()
     vector<vector<int>> allDivisors;
     bool startAgain = false;
     int maxLength = 0;
-    int parameters[3];
+    int parameters[4];
     int biggestDivisor = 0;
+
+    vector<int> winner;
 
     // przechodzenie po kazdym elemencie
     for (int i = 0; i < numbers.size(); i++)
@@ -108,15 +110,21 @@ string zad4_3()
             if (currentSeries.size() == 1)
                 biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors, 0, false);
 
-            if (biggestDivisor != 0 and biggestDivisor != 1 and numbers[i] % biggestDivisor == 0)
+            if (biggestDivisor != 0 and
+                biggestDivisor != 1 and
+                numbers[i] % biggestDivisor == 0)
             {
                 currentSeries.push_back(numbers[i]);
                 allDivisors.push_back(currentDivisors);
             }
-            else if (biggestDivisor != 0 and biggestDivisor != 1 and biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true) != 1 and isInAll(allDivisors, biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true)))
+            else if (biggestDivisor != 0 and
+                     biggestDivisor != 1 and
+                     biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true) != 1 and
+                     isInAll(allDivisors, biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true)))
             {
                 biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true);
                 currentSeries.push_back(numbers[i]);
+                allDivisors.push_back(currentDivisors);
             }
             else
             {
@@ -125,15 +133,27 @@ string zad4_3()
                     parameters[0] = currentSeries[0];
                     parameters[1] = currentSeries.size();
                     parameters[2] = biggestDivisor;
+                    parameters[3] = currentSeries[currentSeries.size() - 1];
                     maxLength = currentSeries.size();
+                    winner = currentSeries;
                 }
 
                 currentSeries.clear();
                 allDivisors.clear();
+
                 startAgain = true;
             }
         }
     }
 
-    return to_string(parameters[0]) + "\n" + to_string(parameters[1]) + "\n" + to_string(parameters[2]);
+    // string answer = "";
+
+    // for (int i = 0; i < winner.size(); i++)
+    // {
+    //     answer += to_string(winner[i]) + "\n";
+    // }
+
+    // return answer;
+
+    return to_string(parameters[0]) + "\n" + to_string(parameters[1]) + "\n" + to_string(parameters[2]) + "\n" + to_string(parameters[3]);
 }
