@@ -79,15 +79,13 @@ string zad4_3()
     }
     file.close();
 
-    vector<int> previousDivisors;
+    vector<int> legacyDivisors;
     vector<int> currentSeries;
     vector<vector<int>> allDivisors;
     bool startAgain = false;
     int maxLength = 0;
-    int parameters[4];
+    int parameters[3];
     int biggestDivisor = 0;
-
-    vector<int> winner;
 
     // przechodzenie po kazdym elemencie
     for (int i = 0; i < numbers.size(); i++)
@@ -98,18 +96,20 @@ string zad4_3()
             if (startAgain)
                 i -= 1;
 
-            previousDivisors = divisors(numbers[i]);
+            legacyDivisors = divisors(numbers[i]);
             currentSeries.push_back(numbers[i]);
-            allDivisors.push_back(previousDivisors);
+            allDivisors.push_back(legacyDivisors);
             startAgain = false;
         }
         else
         {
             vector<int> currentDivisors = divisors(numbers[i]);
 
+            // przypisywanie nowej wartosci najwiekszego dzielnika, jezeli dany ciag dopiero zyskuje drugi element
             if (currentSeries.size() == 1)
-                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors, 0, false);
+                biggestDivisor = biggestCommonDivisor(legacyDivisors, currentDivisors, 0, false);
 
+            // dodawanie kolejnego elementu do ciagu, jezeli najwiekszy dzielnik nie ulega zmianie
             if (biggestDivisor != 0 and
                 biggestDivisor != 1 and
                 numbers[i] % biggestDivisor == 0)
@@ -117,27 +117,34 @@ string zad4_3()
                 currentSeries.push_back(numbers[i]);
                 allDivisors.push_back(currentDivisors);
             }
+            // dodawanie kolejnego elementu ciagu, jezeli najwiekszy dzielnik ulega zmianie
             else if (biggestDivisor != 0 and
                      biggestDivisor != 1 and
-                     biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true) != 1 and
-                     isInAll(allDivisors, biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true)))
+                     biggestCommonDivisor(legacyDivisors, currentDivisors, biggestDivisor, true) != 1 and
+                     isInAll(allDivisors, biggestCommonDivisor(legacyDivisors, currentDivisors, biggestDivisor, true)))
             {
-                biggestDivisor = biggestCommonDivisor(previousDivisors, currentDivisors, biggestDivisor, true);
+                biggestDivisor = biggestCommonDivisor(legacyDivisors, currentDivisors, biggestDivisor, true);
                 currentSeries.push_back(numbers[i]);
                 allDivisors.push_back(currentDivisors);
             }
             else
             {
+                // jezeli ciag, ktory wlasnie sie skonczyl jest najdluzszym do tej pory,
+                // zapisujemy jego dane w tablicy "parameters"
                 if (currentSeries.size() > maxLength and currentSeries.size() > 1)
                 {
                     parameters[0] = currentSeries[0];
                     parameters[1] = currentSeries.size();
                     parameters[2] = biggestDivisor;
-                    parameters[3] = currentSeries[currentSeries.size() - 1];
                     maxLength = currentSeries.size();
-                    winner = currentSeries;
                 }
 
+                // zapobieganie nieskonczonej petli, sprawdzam czy ma sens sprawdzac czy pierwszy element nowego ciagu moze byc
+                // ostatnim elementem poprzedniego
+                if (biggestCommonDivisor(currentDivisors, divisors(numbers[i - 1]), 0, false) > 1)
+                    i -= 1;
+
+                // czyszczenie aktualnego ciagu oraz wszystkich dzielnikow tego ciagu
                 currentSeries.clear();
                 allDivisors.clear();
 
@@ -146,14 +153,5 @@ string zad4_3()
         }
     }
 
-    // string answer = "";
-
-    // for (int i = 0; i < winner.size(); i++)
-    // {
-    //     answer += to_string(winner[i]) + "\n";
-    // }
-
-    // return answer;
-
-    return to_string(parameters[0]) + "\n" + to_string(parameters[1]) + "\n" + to_string(parameters[2]) + "\n" + to_string(parameters[3]);
+    return "4.3. Pierwszy element ciagu: " + to_string(parameters[0]) + "; Dlugosc ciagu: " + to_string(parameters[1]) + "; Najwiekszy dzielnik wszystkich elementow: " + to_string(parameters[2]);
 }
