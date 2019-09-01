@@ -2,9 +2,9 @@
 #include <vector>
 using namespace std;
 
-string zad5_a()
+// funkcja zwracajaca najwieksza sume
+int biggestSum(vector<int> data)
 {
-    vector<int> data = {1, -2, 6, -5, 7, -3};
     int max = -9999;
 
     for (int i = 0; i < data.size() - 1; i++)
@@ -19,6 +19,15 @@ string zad5_a()
                 max = sum;
         }
     }
+
+    return max;
+}
+
+string zad5_a()
+{
+    vector<int> data = {1, -2, 6, -5, 7, -3};
+
+    int max = biggestSum(data);
 
     return "5 a) Najlepsza suma podanego ciagu: " + to_string(max);
 }
