@@ -50,6 +50,6 @@ string zad5_b()
     int sumThree = biggestSum1(loadData("../dane/dane5-3.txt"));
 
     return "5 b) Najwieksza suma z pliku dane5-1.txt: " + to_string(sumOne) +
-           "; 5 b) Najwieksza suma z pliku dane5-2.txt: " + to_string(sumTwo) +
-           "; 5 b) Najwieksza suma z pliku dane5-3.txt: " + to_string(sumThree);
+           "; Najwieksza suma z pliku dane5-2.txt: " + to_string(sumTwo) +
+           "; Najwieksza suma z pliku dane5-3.txt: " + to_string(sumThree);
 }
