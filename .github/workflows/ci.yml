@@ -15,7 +15,7 @@ jobs:
           python-version: 3.7
 
       - name: Install fish
-        run: apt-get install fish
+        run: sudo apt-get install fish
 
       - name: Test python
         run: fish ./test.fish python
