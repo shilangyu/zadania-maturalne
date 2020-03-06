@@ -21,4 +21,4 @@ for x in data:
     count += is_power_of(x, 3)
 
 
-answer = f'4.1. Ilosć liczb ktore sa potegami liczby 3: {count}'
+answer = f'4.1. Ilosc liczb ktore sa potegami liczby 3: {count}'
