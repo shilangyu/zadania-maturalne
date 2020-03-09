@@ -4,8 +4,11 @@ from math import factorial
 data = [x[:-1] for x in open('../dane/liczby.txt')]
 
 
-def factorial_sum(num) -> int:
-    return sum(map(lambda x: factorial(int(x)), list(num)))
+def factorial_sum(num):
+    processed = []
+    for x in list(num):
+        processed.append(factorial(int(x)))
+    return sum(processed)
 
 
 numbers = []
