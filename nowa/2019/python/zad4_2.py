@@ -1,11 +1,12 @@
 from math import factorial
 
 
+data = [x[:-1] for x in open('../dane/liczby.txt')]
+
+
 def factorial_sum(num) -> int:
     return sum(map(lambda x: factorial(int(x)), list(num)))
 
-
-data = [x[:-1] for x in open('../dane/liczby.txt')]
 
 numbers = []
 

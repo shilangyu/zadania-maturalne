@@ -1,3 +1,6 @@
+data = [int(x[:-1]) for x in open('../dane/liczby.txt')]
+
+
 def is_power_of(x, n):
     """checks if `x` is the power of `n`"""
     if x == 1:
@@ -9,9 +12,6 @@ def is_power_of(x, n):
             return True
         x /= n
     return False
-
-
-data = [int(x[:-1]) for x in open('../dane/liczby.txt')]
 
 
 count = 0
