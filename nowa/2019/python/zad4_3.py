@@ -5,8 +5,6 @@ def nwd(nums):
     smol = min(nums)
 
     for el in reversed(range(1, smol // 2 + 1)):
-        if el == 1:
-            pass
         if smol % el == 0:
             for a in nums:
                 if a % el != 0:
@@ -26,10 +24,8 @@ for a in range(len(data)):
 
 best_nwd = nwd(best)
 
-print(best)
 
 answer = f'4.3. Pierwsza liczba: {best[0]}; ' + \
          f'dlugosc ciagu: {len(best)}; ' + \
          f'najwiekszy dzielnik: {best_nwd}'
 
-print(answer)
