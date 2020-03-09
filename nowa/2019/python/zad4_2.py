@@ -18,4 +18,4 @@ for x in data:
         numbers.append(x)
 
 final_nums = '\n'.join(numbers)
-answer = f'4.2. Najdluzszy ciag z NWD wiekszym niż 1 \n{final_nums}'
+answer = f'4.2. liczby rowne sumie silni swoich liczb: \n{final_nums}'
