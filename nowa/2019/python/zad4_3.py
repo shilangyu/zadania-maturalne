@@ -32,7 +32,7 @@ for a in range(len(data)):
 best_nwd = nwd(best)
 
 # zapisz odpowiedz
-
 answer = f'4.3. Pierwsza liczba: {best[0]}; ' + \
          f'dlugosc ciagu: {len(best)}; ' + \
          f'najwiekszy dzielnik: {best_nwd}'
+print(answer)

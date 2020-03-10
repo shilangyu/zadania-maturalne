@@ -25,3 +25,4 @@ for x in data:
 # zapisz odpowiedz
 final_nums = '\n'.join(numbers)
 answer = f'4.2. liczby rowne sumie silni swoich liczb: \n{final_nums}'
+print(answer)
