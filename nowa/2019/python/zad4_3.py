@@ -8,7 +8,7 @@ def nwd(nums):
     smol = min(nums)
 
     # przejdz po odwróconym ciągu od 1 do najmniejszego elementu `nums`
-    for el in reversed(range(1, smol // 2 + 1)):
+    for el in reversed(range(1, smol+1)):
         if smol % el == 0:
             # sprawdz czy kazdy element `nums` jest podzielny przez ten element
             for a in nums:
