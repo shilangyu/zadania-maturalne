@@ -12,6 +12,6 @@ Rozwiązania dotyczą tylko drugiej części egzaminu. Zadania z arkuszy kalkula
 
 W każdym folderze z zadaniami, z odpowiedniego roku, znajduje się folder z danymi oraz foldery odpowiadające konkretnym zadaniom. W części z baz danych i arkuszy kalkulacyjnych dostępny jest plik źródłowy ze zrobionymi poprawnie zadaniami oraz zrzuty ekranu odpowiednich elementów, jeżeli wymagało tego polecenie.
 
-W części programistycznej każdemu podpunktowi odpowiada osobny plik z opdowiednią nazwą. Żeby uruchomić program, wystarczy skompilować **tylko** plik *main*, ponieważ importuje on pozostałe pliki. Wynikiem wykonania programu powinno być wyświetlenie w konsoli odpowiedzi i zapisanie ich do osobnego pliku.
+W części programistycznej każdemu podpunktowi odpowiada osobny plik z odpowiednią nazwą. Żeby uruchomić program, wystarczy skompilować **tylko** plik *main*, ponieważ importuje on pozostałe pliki. Wynikiem wykonania programu powinno być wyświetlenie w konsoli odpowiedzi i zapisanie ich do osobnego pliku.
 
 Po więcej informacji odnośnie standardu, w jakim zapisywane są rozwiązania, zajrzyj na naszą [wiki](https://github.com/shilangyu/zadania-maturalne/wiki).
